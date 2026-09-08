@@ -610,3 +610,5 @@ Financial data collection log >>
 2026-09-08 01:05:05.823876, no: 13, code 093240 in process
 2026-09-08 01:05:11.659298, no: 14, code 097870 in process
 == Update finished ==
+Company health data collection initiated at 2026-09-09 01:00:09.904525
+Updating KRX data...
