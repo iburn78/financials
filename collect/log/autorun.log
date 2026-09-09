@@ -2176,3 +2176,9 @@ sending incremental file list
 
 sent 261 bytes  received 12 bytes  546.00 bytes/sec
 total size is 71,474,258  speedup is 261,810.47
+prices and volumes updates [initiating] 2026-09-10 08:00:04
+ERROR 2026-09-09 csv data not exists
+sending incremental file list
+
+sent 261 bytes  received 12 bytes  546.00 bytes/sec
+total size is 71,474,258  speedup is 261,810.47
