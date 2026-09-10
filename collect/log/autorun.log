@@ -2218,3 +2218,16 @@ sending incremental file list
 
 sent 261 bytes  received 12 bytes  546.00 bytes/sec
 total size is 71,474,258  speedup is 261,810.47
+prices and volumes updates [initiating] 2026-09-11 01:00:04
+ERROR 2026-09-10 csv data not exists
+Company health data collection initiated at 2026-09-11 01:00:08.846333
+Updating KRX data...
+ERROR 2026-09-10 csv data not exists
+sending incremental file list
+
+sent 1,485 bytes  received 12 bytes  2,994.00 bytes/sec
+total size is 18,463,778  speedup is 12,333.85
+sending incremental file list
+
+sent 261 bytes  received 12 bytes  546.00 bytes/sec
+total size is 71,474,258  speedup is 261,810.47
