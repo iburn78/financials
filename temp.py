@@ -29,6 +29,9 @@ import json
 from pathlib import Path
 import requests
 import pandas as pd
+from data.util.load import get_prices
+
+print(get_prices())
 
 CONFIG_DIR = Path(__file__).parent.parent / 'config'
 with open(CONFIG_DIR / 'KRX_openapi.json', 'r') as json_file:
@@ -44,10 +47,12 @@ def get_date_str():
         'Referer': 'https://data.krx.co.kr/contents/MDC/MDI/outerLoader/index.cmd'
     }
     url = 'http://data.krx.co.kr/comm/bldAttendant/executeForResourceBundle.cmd?baseName=krx.mdc.i18n.component&key=B128.bld'
-    r = requests.get(url, headers=headers)
-    j = json.loads(r.text)
-    return j['result']['output'][0]['max_work_dt']
-
+    try: 
+        r = requests.get(url, headers=headers)
+        j = json.loads(r.text)
+        return j['result']['output'][0]['max_work_dt']
+    except:
+        return None
 
 KRX_URL = "https://data-dbg.krx.co.kr/svc/apis/sto/stk_bydd_trd"
 
@@ -67,6 +72,21 @@ def get_krx_stocks(bas_dd: str) -> list[dict]:
 
     return response.json()["OutBlock_1"]
 
-date_str = get_date_str()
-a = get_krx_stocks('20260909')
-print(a)
+import datetime
+import time
+
+
+for i in range(100):
+    print(datetime.datetime.now())
+    date_str = get_date_str()
+    print(date_str)
+    a = get_krx_stocks(date_str)
+    a = pd.DataFrame(a)
+    print(a)
+    # print(a[0].keys())
+    # print(len(a))
+    # print(a[0])
+
+    time.sleep(20)
+
+
