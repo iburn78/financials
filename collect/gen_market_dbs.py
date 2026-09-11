@@ -130,6 +130,7 @@ def gen_market_DB(paths, START_DATE):
     # the data in the last date should be updated too (if loaded from file)
     dates_to_update = market_dates[market_dates.get_loc(price_db.index[-1]):]
     dates_to_update = market_dates[market_dates.get_loc(price_db.index[-4]):]
+    print(dates_to_update)
 
     prev_market_snapshot = _get_market_snapshot(dates_to_update[0])
     intersection = pd.merge(prev_market_snapshot, market_snapshot, on=['Code', 'Stocks'], how='inner')
@@ -148,12 +149,14 @@ def gen_market_DB(paths, START_DATE):
     
     # snapshot update should be done after full replaces above
     for date in dates_to_update:
+        print(date)
         # this is only available through CACHE from 2026-03-08
         date_req = date.strftime('%Y%m%d')
         # Quick Fix (FDR Error): -------------------------
         if date_req == '20260608': date_req = '20260605'
         if date_req == '20260908': date_req = '20260907'
         # ------------------------------------------------
+        print(date_req)
         date_snapshot = fdr.StockListing('KRX', date_req)[['Code', 'Market', 'Close', 'Volume', 'Amount', 'Marcap', 'Stocks']] 
         date_snapshot = date_snapshot.loc[date_snapshot['Market'].str.contains('KOSPI|KOSDAQ')]
 
