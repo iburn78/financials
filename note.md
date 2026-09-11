@@ -208,3 +208,7 @@
 
             return None if df.empty else df.iloc[0]['corp_code']
         ```
+
+
+- FinanceDataReader vs direct access: 
+    - refer to: https://github.com/PotatoWhite/fin-invest/blob/main/NAVER_API_RESEARCH.md
