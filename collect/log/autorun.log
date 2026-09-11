@@ -1,0 +1,11 @@
+prices and volumes updates [initiating] 2026-09-11 16:00:05
+prices and volumes updates [completed]
+sending incremental file list
+kosdaq.feather
+kospi.feather
+kospi200.feather
+price_db.feather
+volume_db.feather
+
+sent 50,556,638 bytes  received 111 bytes  101,113,498.00 bytes/sec
+total size is 71,626,491  speedup is 1.42
