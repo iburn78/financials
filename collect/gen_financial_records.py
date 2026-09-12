@@ -333,9 +333,7 @@ def update_main_db(log_file, main_db, plot_gen_control_file=None):
     start_day = (pd.to_datetime(start_day) - datetime.timedelta(days=7)).strftime('%Y-%m-%d')
     end_day = datetime.datetime.today().strftime('%Y-%m-%d')
     # to manually assign the period: (up to three months)
-    ###_ --------------------------------------------------
-    start_day = '2026-07-01' ###_ temporarily modified... 
-    ###_ --------------------------------------------------
+    # start_day = '2026-07-01' 
     # end_day = '2023-11-15'
 
     full_rescan_code, partial_rescan_code = _generate_update_codelist(log_file, start_day, end_day)
