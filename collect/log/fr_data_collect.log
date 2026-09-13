@@ -2573,3 +2573,35 @@ Financial data collection log >>
 2026-09-13 01:02:39.717592, no: 9, code 050860 in process
 2026-09-13 01:02:45.557811, no: 10, code 334970 in process
 == Update finished ==
+Company health data collection initiated at 2026-09-14 01:00:16.501999
+Updating KRX data...
+Updating between dates: 2026-09-06 / 2026-09-14
+FULL rescan codes:
+Total 7 items.
+[0-6] ['001470', '001680', '049430', '226590', '350520', '388610', '459510']
+PARTIAL rescan codes:
+Total 11 items.
+[0-10] ['169330', '395400', '334970', '097870', '032800', '093240', '030960', '021820', '001080', '189690', '050860']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-14 01:00:23.286912, no: 0, code 001470 in process
+2026-09-14 01:00:39.257879, no: 1, code 001680 in process
+2026-09-14 01:00:54.901093, no: 2, code 049430 in process
+2026-09-14 01:01:10.673341, no: 3, code 226590 in process
+2026-09-14 01:01:17.838989, no: 4, code 350520 in process
+2026-09-14 01:01:24.515945, no: 5, code 388610 in process
+2026-09-14 01:01:31.397693, no: 6, code 459510 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-14 01:01:47.633129, no: 0, code 169330 in process
+2026-09-14 01:01:53.478560, no: 1, code 395400 in process
+2026-09-14 01:01:59.443142, no: 2, code 334970 in process
+2026-09-14 01:02:05.255125, no: 3, code 097870 in process
+2026-09-14 01:02:11.121180, no: 4, code 032800 in process
+2026-09-14 01:02:16.967958, no: 5, code 093240 in process
+2026-09-14 01:02:22.816087, no: 6, code 030960 in process
+2026-09-14 01:02:28.632504, no: 7, code 021820 in process
+2026-09-14 01:02:34.503159, no: 8, code 001080 in process
+2026-09-14 01:02:40.316097, no: 9, code 189690 in process
+2026-09-14 01:02:46.200929, no: 10, code 050860 in process
+== Update finished ==
