@@ -1,0 +1,12 @@
+prices and volumes updates [initiating] 2026-09-14 16:00:05
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+sending incremental file list
+kosdaq.feather
+kospi.feather
+kospi200.feather
+price_db.feather
+volume_db.feather
+
+sent 40,341,167 bytes  received 111 bytes  26,894,185.33 bytes/sec
+total size is 61,422,991  speedup is 1.52
