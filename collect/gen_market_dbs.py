@@ -96,7 +96,9 @@ def initialization(START_DATE, paths, workers=8):
 def _save_db(db, path):
     # float is efficient in NaN handling etc 
     db = db.apply(pd.to_numeric, errors='coerce')
+
     # remove delisted
+    # be cautious: this below could delete all columns 
     db = db.dropna(axis=1, subset=[db.index[-1]])
     db.to_feather(path)
 
