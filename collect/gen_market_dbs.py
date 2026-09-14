@@ -92,6 +92,7 @@ def initialization(START_DATE, paths, workers=8):
     _save_db(pdb, paths[0])
     _save_db(vdb, paths[1])
 
+
 def _save_db(db, path):
     # float is efficient in NaN handling etc 
     db = db.apply(pd.to_numeric, errors='coerce')
@@ -122,45 +123,47 @@ def gen_market_DB(paths, START_DATE):
     try:
         price_db = pd.read_feather(price_db_path)
         volume_db = pd.read_feather(volume_db_path)
+
+        # Get dates to update from the last available date in price_db
+        # the data in the last date should be updated too (if loaded from file)
+        dates_to_update = market_dates[market_dates.get_loc(price_db.index[-1]):]
+
+        prev_market_snapshot = _get_market_snapshot(dates_to_update[0])
+        intersection = pd.merge(prev_market_snapshot, market_snapshot, on=['Code', 'Stocks'], how='inner')
+        code_list_to_fully_replace = list(set(market_snapshot['Code']) - set(intersection['Code']))
+
+        # Replace the entire price/volume data for certain stocks
+        # filled until yesterday
+        for code in code_list_to_fully_replace:
+            try:
+                code, res = _fetch(code, START_DATE)
+                price_db[code] = res['Close']
+                volume_db[code] = res['Volume']
+            except Exception as e:
+                print(f"Error retrieving full data for {code}: {e}")
+                continue  # Skip if there is an error
+    
+        # snapshot update should be done after full replaces above
+        for date in dates_to_update:
+            # this is only available through CACHE from 2026-03-08
+            date_req = date.strftime('%Y%m%d')
+            # Quick Fix (FDR Error): -------------------------
+            if date_req == '20260608': date_req = '20260605'
+            if date_req == '20260908': date_req = '20260907'
+            # ------------------------------------------------
+            date_snapshot = fdr.StockListing('KRX', date_req)[['Code', 'Market', 'Close', 'Volume', 'Amount', 'Marcap', 'Stocks']] 
+            date_snapshot = date_snapshot.loc[date_snapshot['Market'].str.contains('KOSPI|KOSDAQ')]
+
+            price_db = _update_DB(price_db, date_snapshot, date, 'Close')
+            volume_db = _update_DB(volume_db, date_snapshot, date, 'Volume')
+    
+        _save_db(price_db, price_db_path)
+        _save_db(volume_db, volume_db_path)
+
     except FileNotFoundError:  # Handle if files don't exist
         print('files not found - creating new ones; could take some time')
         initialization(START_DATE=START_DATE, paths=paths)
-
-    # Get dates to update from the last available date in price_db
-    # the data in the last date should be updated too (if loaded from file)
-    dates_to_update = market_dates[market_dates.get_loc(price_db.index[-1]):]
-
-    prev_market_snapshot = _get_market_snapshot(dates_to_update[0])
-    intersection = pd.merge(prev_market_snapshot, market_snapshot, on=['Code', 'Stocks'], how='inner')
-    code_list_to_fully_replace = list(set(market_snapshot['Code']) - set(intersection['Code']))
-
-    # Replace the entire price/volume data for certain stocks
-    # filled until yesterday
-    for code in code_list_to_fully_replace:
-        try:
-            code, res = _fetch(code, START_DATE)
-            price_db[code] = res['Close']
-            volume_db[code] = res['Volume']
-        except Exception as e:
-            print(f"Error retrieving full data for {code}: {e}")
-            continue  # Skip if there is an error
-    
-    # snapshot update should be done after full replaces above
-    for date in dates_to_update:
-        # this is only available through CACHE from 2026-03-08
-        date_req = date.strftime('%Y%m%d')
-        # Quick Fix (FDR Error): -------------------------
-        if date_req == '20260608': date_req = '20260605'
-        if date_req == '20260908': date_req = '20260907'
-        # ------------------------------------------------
-        date_snapshot = fdr.StockListing('KRX', date_req)[['Code', 'Market', 'Close', 'Volume', 'Amount', 'Marcap', 'Stocks']] 
-        date_snapshot = date_snapshot.loc[date_snapshot['Market'].str.contains('KOSPI|KOSDAQ')]
-
-        price_db = _update_DB(price_db, date_snapshot, date, 'Close')
-        volume_db = _update_DB(volume_db, date_snapshot, date, 'Volume')
-    
-    _save_db(price_db, price_db_path)
-    _save_db(volume_db, volume_db_path)
+        return
 
     # INDEX data collection
     kospi = fdr.DataReader('KS11')
@@ -183,8 +186,8 @@ if __name__ == '__main__':
     gen_market_DB(pvi_paths, START_DATE)
     print("prices and volumes updates [completed]")
 
-    # price_db = pd.read_feather(paths[0])
-    # volume_db = pd.read_feather(paths[1])
+    # price_db = pd.read_feather(pvi_paths[0])
+    # volume_db = pd.read_feather(pvi_paths[1])
 
     # print(price_db)
     # print(volume_db)
