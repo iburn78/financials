@@ -107,3 +107,10 @@ financial_reports_main.parquet
 
 sent 21,086,992 bytes  received 54 bytes  42,174,092.00 bytes/sec
 total size is 61,412,359  speedup is 2.91
+prices and volumes updates [initiating] 2026-09-15 08:00:05
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+sending incremental file list
+
+sent 261 bytes  received 12 bytes  546.00 bytes/sec
+total size is 61,412,359  speedup is 224,953.70
