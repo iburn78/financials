@@ -105,6 +105,7 @@ def _save_db(db, path):
 def _update_DB(DB, snapshot, date, column):
     row = snapshot.set_index('Code')[column]
     DB.loc[date, row.index] = row
+
     return DB
 
 def _get_market_snapshot(date = None):
@@ -152,8 +153,14 @@ def gen_market_DB(paths, START_DATE):
             # Quick Fix (FDR Error): -------------------------
             if date_req == '20260608': date_req = '20260605'
             if date_req == '20260908': date_req = '20260907'
+            if date_req == '20260914': date_req = '20260913'
             # ------------------------------------------------
             date_snapshot = fdr.StockListing('KRX', date_req)[['Code', 'Market', 'Close', 'Volume', 'Amount', 'Marcap', 'Stocks']] 
+            _close = pd.to_numeric(date_snapshot['Close'], errors='coerce')
+            bad_count = _close.isna().sum() 
+            if bad_count > 20: # consider the date_snapshot is corrupt
+                print('current run is ignored, the current fdr gathering is corrupt')
+                return
             date_snapshot = date_snapshot.loc[date_snapshot['Market'].str.contains('KOSPI|KOSDAQ')]
 
             price_db = _update_DB(price_db, date_snapshot, date, 'Close')
