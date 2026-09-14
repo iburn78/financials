@@ -10,3 +10,10 @@ volume_db.feather
 
 sent 40,341,167 bytes  received 111 bytes  26,894,185.33 bytes/sec
 total size is 61,422,991  speedup is 1.52
+prices and volumes updates [initiating] 2026-09-14 18:00:05
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+sending incremental file list
+
+sent 262 bytes  received 12 bytes  548.00 bytes/sec
+total size is 61,422,991  speedup is 224,171.50
