@@ -222,3 +222,95 @@ sending incremental file list
 
 sent 261 bytes  received 12 bytes  546.00 bytes/sec
 total size is 61,412,359  speedup is 224,953.70
+$0009K0.KS: possibly delisted; no timezone found
+prices and volumes updates [initiating] 2026-09-16 01:00:04
+[006090] Close mismatch on 2026-09-15: fdr=8860, yf=nan. Using fdr only.
+[001210] Close mismatch on 2026-09-15: fdr=10840, yf=nan. Using fdr only.
+[263720] Latest FDR date 2026-09-15 not in Yahoo. Using fdr only.
+[086890] Latest FDR date 2026-09-15 not in Yahoo. Using fdr only.
+[267270] Close mismatch on 2026-09-15: fdr=134000, yf=nan. Using fdr only.
+[226950] Latest FDR date 2026-09-15 not in Yahoo. Using fdr only.
+[417180] Latest FDR date 2026-09-15 not in Yahoo. Using fdr only.
+[003490] Close mismatch on 2026-09-15: fdr=29350, yf=nan. Using fdr only.
+[003495] Close mismatch on 2026-09-15: fdr=21800, yf=nan. Using fdr only.
+[180640] Close mismatch on 2026-09-15: fdr=138200, yf=nan. Using fdr only.
+[18064K] Close mismatch on 2026-09-15: fdr=30850, yf=nan. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-09-16 01:00:16.454774
+Updating KRX data...
+Updating between dates: 2026-09-08 / 2026-09-16
+FULL rescan codes:
+Total 6 items.
+[0-5] ['001470', '001680', '049430', '226590', '350520', '459510']
+PARTIAL rescan codes:
+Total 11 items.
+[0-10] ['032800', '334970', '030960', '093240', '169330', '050860', '097870', '395400', '021820', '001080', '189690']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-16 01:00:24.071945, no: 0, code 001470 in process
+2026-09-16 01:00:40.322613, no: 1, code 001680 in process
+2026-09-16 01:00:56.185039, no: 2, code 049430 in process
+2026-09-16 01:01:12.149787, no: 3, code 226590 in process
+2026-09-16 01:01:19.468924, no: 4, code 350520 in process
+2026-09-16 01:01:26.182006, no: 5, code 459510 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-16 01:01:42.369587, no: 0, code 032800 in process
+2026-09-16 01:01:48.232941, no: 1, code 334970 in process
+2026-09-16 01:01:54.061932, no: 2, code 030960 in process
+2026-09-16 01:01:59.938964, no: 3, code 093240 in process
+2026-09-16 01:02:05.751973, no: 4, code 169330 in process
+2026-09-16 01:02:11.604758, no: 5, code 050860 in process
+2026-09-16 01:02:17.433756, no: 6, code 097870 in process
+2026-09-16 01:02:23.309638, no: 7, code 395400 in process
+2026-09-16 01:02:29.403580, no: 8, code 021820 in process
+2026-09-16 01:02:35.295731, no: 9, code 001080 in process
+2026-09-16 01:02:41.142004, no: 10, code 189690 in process
+== Update finished ==
+001080 | 1/17
+001470 | 2/17
+001680 | 3/17
+021820 | 4/17
+030960 | 5/17
+032800 | 6/17
+049430 | 7/17
+050860 | 8/17
+093240 | 9/17
+097870 | 10/17
+169330 | 11/17
+189690 | 12/17
+226590 | 13/17
+334970 | 14/17
+350520 | 15/17
+395400 | 16/17
+2026-09-16 01:04:36.564752 | 395400 | quarterly data of 395400 is empty.
+459510 | 17/17
+sending incremental file list
+001080.png
+001470.png
+001680.png
+021820.png
+030960.png
+032800.png
+049430.png
+050860.png
+093240.png
+097870.png
+169330.png
+189690.png
+226590.png
+334970.png
+350520.png
+459510.png
+df_krx.db
+update_info.txt
+
+sent 5,949,608 bytes  received 360 bytes  11,899,936.00 bytes/sec
+total size is 607,886,140  speedup is 102.17
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+
+sent 21,085,995 bytes  received 54 bytes  14,057,366.00 bytes/sec
+total size is 61,411,361  speedup is 2.91
