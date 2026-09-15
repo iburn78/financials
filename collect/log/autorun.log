@@ -168,3 +168,21 @@ sending incremental file list
 
 sent 261 bytes  received 12 bytes  546.00 bytes/sec
 total size is 61,412,359  speedup is 224,953.70
+$0009K0.KS: possibly delisted; no timezone found
+prices and volumes updates [initiating] 2026-09-15 16:00:04
+[267270] Close mismatch on 2026-09-14: fdr=138400, yf=139800.0. Using fdr only.
+[086890] Close mismatch on 2026-09-14: fdr=3560, yf=3500.0. Using fdr only.
+[263720] Close mismatch on 2026-09-14: fdr=7160, yf=7110.0. Using fdr only.
+[006090] Close mismatch on 2026-09-14: fdr=8820, yf=8810.0. Using fdr only.
+[003495] Close mismatch on 2026-09-14: fdr=21900, yf=21950.0. Using fdr only.
+[180640] Close mismatch on 2026-09-14: fdr=137100, yf=138700.0. Using fdr only.
+[226950] Close mismatch on 2026-09-14: fdr=99800, yf=100100.0. Using fdr only.
+[001210] Close mismatch on 2026-09-14: fdr=10890, yf=10770.0. Using fdr only.
+[003490] Close mismatch on 2026-09-14: fdr=29650, yf=29850.0. Using fdr only.
+[18064K] Close mismatch on 2026-09-14: fdr=30250, yf=30700.0. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+sending incremental file list
+
+sent 261 bytes  received 12 bytes  546.00 bytes/sec
+total size is 61,412,359  speedup is 224,953.70
