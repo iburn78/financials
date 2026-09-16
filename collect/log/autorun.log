@@ -431,3 +431,26 @@ sending incremental file list
 
 sent 262 bytes  received 12 bytes  548.00 bytes/sec
 total size is 61,411,361  speedup is 224,129.05
+$0009K0.KS: possibly delisted; no timezone found
+prices and volumes updates [initiating] 2026-09-16 20:00:04
+[086890] Close mismatch on 2026-09-15: fdr=3600, yf=3595.0. Using fdr only.
+[417180] Close mismatch on 2026-09-15: fdr=4135, yf=4095.0. Using fdr only.
+[179530] Close mismatch on 2026-09-15: fdr=1969, yf=2000.0. Using fdr only.
+[003495] Close mismatch on 2026-09-15: fdr=21800, yf=21850.0. Using fdr only.
+[317770] Close mismatch on 2026-09-15: fdr=2625, yf=2595.0. Using fdr only.
+[082270] Close mismatch on 2026-09-15: fdr=10390, yf=10370.0. Using fdr only.
+[217270] Close mismatch on 2026-09-15: fdr=2620, yf=2595.0. Using fdr only.
+[083660] Close mismatch on 2026-09-15: fdr=1524, yf=1486.0. Using fdr only.
+[263720] Close mismatch on 2026-09-15: fdr=7150, yf=7130.0. Using fdr only.
+[001210] Close mismatch on 2026-09-15: fdr=10840, yf=10800.0. Using fdr only.
+[18064K] Close mismatch on 2026-09-15: fdr=30850, yf=31000.0. Using fdr only.
+[267270] Close mismatch on 2026-09-15: fdr=134000, yf=134500.0. Using fdr only.
+[226950] Close mismatch on 2026-09-15: fdr=108600, yf=108300.0. Using fdr only.
+[018000] Close mismatch on 2026-09-15: fdr=1212, yf=1219.0. Using fdr only.
+[115450] Close mismatch on 2026-09-15: fdr=2020, yf=1996.0. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+sending incremental file list
+
+sent 262 bytes  received 12 bytes  548.00 bytes/sec
+total size is 61,411,361  speedup is 224,129.05
