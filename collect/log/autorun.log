@@ -454,3 +454,100 @@ sending incremental file list
 
 sent 262 bytes  received 12 bytes  548.00 bytes/sec
 total size is 61,411,361  speedup is 224,129.05
+$0009K0.KS: possibly delisted; no timezone found
+prices and volumes updates [initiating] 2026-09-17 01:00:05
+[417180] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[226950] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[003495] Close mismatch on 2026-09-16: fdr=22100, yf=nan. Using fdr only.
+[069920] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[006090] Close mismatch on 2026-09-16: fdr=8840, yf=nan. Using fdr only.
+[001210] Close mismatch on 2026-09-16: fdr=11080, yf=nan. Using fdr only.
+[317770] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[263720] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[018000] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[179530] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[180640] Close mismatch on 2026-09-16: fdr=137000, yf=nan. Using fdr only.
+[003490] Close mismatch on 2026-09-16: fdr=29250, yf=nan. Using fdr only.
+[18064K] Close mismatch on 2026-09-16: fdr=30400, yf=nan. Using fdr only.
+[083660] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[331380] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[217270] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[082270] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[365590] Close mismatch on 2026-09-16: fdr=1589, yf=nan. Using fdr only.
+[099190] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[115450] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+[267270] Close mismatch on 2026-09-16: fdr=134000, yf=nan. Using fdr only.
+[086890] Latest FDR date 2026-09-16 not in Yahoo. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-09-17 01:00:20.915978
+Updating KRX data...
+Updating between dates: 2026-09-09 / 2026-09-17
+FULL rescan codes:
+Total 5 items.
+[0-4] ['000270', '001470', '001680', '208350', '350520']
+PARTIAL rescan codes:
+Total 10 items.
+[0-9] ['030960', '032800', '334970', '097870', '093240', '169330', '050860', '001080', '021820', '189690']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-17 01:00:27.555092, no: 0, code 000270 in process
+2026-09-17 01:00:43.487747, no: 1, code 001470 in process
+2026-09-17 01:00:59.148877, no: 2, code 001680 in process
+2026-09-17 01:01:15.178289, no: 3, code 208350 in process
+2026-09-17 01:01:30.252236, no: 4, code 350520 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-17 01:01:46.519060, no: 0, code 030960 in process
+2026-09-17 01:01:52.380576, no: 1, code 032800 in process
+2026-09-17 01:01:58.218076, no: 2, code 334970 in process
+2026-09-17 01:02:04.020737, no: 3, code 097870 in process
+2026-09-17 01:02:09.912744, no: 4, code 093240 in process
+2026-09-17 01:02:15.881312, no: 5, code 169330 in process
+2026-09-17 01:02:21.714625, no: 6, code 050860 in process
+2026-09-17 01:02:27.534691, no: 7, code 001080 in process
+2026-09-17 01:02:33.429532, no: 8, code 021820 in process
+2026-09-17 01:02:39.316298, no: 9, code 189690 in process
+== Update finished ==
+000270 | 1/15
+001080 | 2/15
+001470 | 3/15
+001680 | 4/15
+021820 | 5/15
+030960 | 6/15
+032800 | 7/15
+050860 | 8/15
+093240 | 9/15
+097870 | 10/15
+169330 | 11/15
+189690 | 12/15
+208350 | 13/15
+334970 | 14/15
+350520 | 15/15
+sending incremental file list
+000270.png
+001080.png
+001470.png
+001680.png
+021820.png
+030960.png
+032800.png
+050860.png
+093240.png
+097870.png
+169330.png
+189690.png
+208350.png
+334970.png
+350520.png
+df_krx.db
+update_info.txt
+
+sent 5,945,428 bytes  received 341 bytes  11,891,538.00 bytes/sec
+total size is 608,375,553  speedup is 102.32
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+
+sent 21,084,240 bytes  received 54 bytes  42,168,588.00 bytes/sec
+total size is 61,409,606  speedup is 2.91
