@@ -865,3 +865,38 @@ financial_reports_main.parquet
 
 sent 21,070,998 bytes  received 54 bytes  42,142,104.00 bytes/sec
 total size is 61,396,364  speedup is 2.91
+$0009K0.KS: possibly delisted; no timezone found
+prices and volumes updates [initiating] 2026-09-18 08:00:06
+[020400] Close mismatch on 2026-09-17: fdr=2820, yf=2780.0. Using fdr only.
+[006090] Close mismatch on 2026-09-17: fdr=8860, yf=8920.0. Using fdr only.
+[099190] Close mismatch on 2026-09-17: fdr=15830, yf=15850.0. Using fdr only.
+[009620] Close mismatch on 2026-09-17: fdr=4300, yf=nan. Using fdr only.
+[267270] Close mismatch on 2026-09-17: fdr=142500, yf=142100.0. Using fdr only.
+[115450] Close mismatch on 2026-09-17: fdr=2075, yf=2050.0. Using fdr only.
+[365590] Close mismatch on 2026-09-17: fdr=1473, yf=1456.0. Using fdr only.
+[086890] Close mismatch on 2026-09-17: fdr=3580, yf=3595.0. Using fdr only.
+[179530] Close mismatch on 2026-09-17: fdr=1969, yf=1877.0. Using fdr only.
+[043260] Close mismatch on 2026-09-17: fdr=22200, yf=21600.0. Using fdr only.
+[317770] Close mismatch on 2026-09-17: fdr=2575, yf=2590.0. Using fdr only.
+[066970] Close mismatch on 2026-09-17: fdr=113200, yf=111300.0. Using fdr only.
+[295310] Close mismatch on 2026-09-17: fdr=61700, yf=60700.0. Using fdr only.
+[417180] Close mismatch on 2026-09-17: fdr=4595, yf=4080.0. Using fdr only.
+[003495] Close mismatch on 2026-09-17: fdr=21850, yf=21650.0. Using fdr only.
+[003490] Close mismatch on 2026-09-17: fdr=29550, yf=29400.0. Using fdr only.
+[217270] Close mismatch on 2026-09-17: fdr=2580, yf=2520.0. Using fdr only.
+[263720] Close mismatch on 2026-09-17: fdr=7000, yf=6970.0. Using fdr only.
+[082270] Close mismatch on 2026-09-17: fdr=10330, yf=10200.0. Using fdr only.
+[068790] Close mismatch on 2026-09-17: fdr=7160, yf=7170.0. Using fdr only.
+[180640] Close mismatch on 2026-09-17: fdr=140200, yf=139500.0. Using fdr only.
+[181710] Close mismatch on 2026-09-17: fdr=56900, yf=56600.0. Using fdr only.
+[001210] Close mismatch on 2026-09-17: fdr=10720, yf=10610.0. Using fdr only.
+[226950] Close mismatch on 2026-09-17: fdr=112800, yf=114200.0. Using fdr only.
+[445680] Close mismatch on 2026-09-17: fdr=47100, yf=47700.0. Using fdr only.
+[083660] Close mismatch on 2026-09-17: fdr=1535, yf=1527.0. Using fdr only.
+[018000] Close mismatch on 2026-09-17: fdr=1227, yf=1224.0. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+sending incremental file list
+
+sent 262 bytes  received 12 bytes  548.00 bytes/sec
+total size is 61,396,364  speedup is 224,074.32
