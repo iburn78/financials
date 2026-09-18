@@ -1162,3 +1162,131 @@ sending incremental file list
 
 sent 262 bytes  received 12 bytes  548.00 bytes/sec
 total size is 61,396,364  speedup is 224,074.32
+$0009K0.KS: possibly delisted; no timezone found
+$462860.KS: possibly delisted; no timezone found
+$376900.KS: possibly delisted; no timezone found
+$475830.KS: possibly delisted; no timezone found
+prices and volumes updates [initiating] 2026-09-19 01:00:04
+[025000] Close mismatch on 2026-09-18: fdr=56300, yf=nan. Using fdr only.
+[226950] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[009620] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[068790] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[115450] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[263720] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[028080] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[295310] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[078520] Close mismatch on 2026-09-18: fdr=10750, yf=nan. Using fdr only.
+[043260] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[003490] Close mismatch on 2026-09-18: fdr=29150, yf=nan. Using fdr only.
+[217270] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[099220] Close mismatch on 2026-09-18: fdr=5440, yf=nan. Using fdr only.
+[900110] Close mismatch on 2026-09-18: fdr=6270, yf=nan. Using fdr only.
+[18064K] Close mismatch on 2026-09-18: fdr=30300, yf=nan. Using fdr only.
+[365590] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[417180] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[018880] Close mismatch on 2026-09-18: fdr=3450, yf=nan. Using fdr only.
+[020400] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[058650] Close mismatch on 2026-09-18: fdr=130500, yf=nan. Using fdr only.
+[267270] Close mismatch on 2026-09-18: fdr=140400, yf=nan. Using fdr only.
+[317770] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[069920] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[005180] Close mismatch on 2026-09-18: fdr=84900, yf=nan. Using fdr only.
+[445680] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[179530] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[084440] Close mismatch on 2026-09-18: fdr=5520, yf=nan. Using fdr only.
+[018000] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[076610] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[180640] Close mismatch on 2026-09-18: fdr=139200, yf=nan. Using fdr only.
+[066970] Close mismatch on 2026-09-18: fdr=110500, yf=nan. Using fdr only.
+[086890] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[331380] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[082270] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[900290] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[001210] Close mismatch on 2026-09-18: fdr=10950, yf=nan. Using fdr only.
+[099190] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[304360] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[006090] Close mismatch on 2026-09-18: fdr=8820, yf=nan. Using fdr only.
+[083660] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[023150] Close mismatch on 2026-09-18: fdr=4195, yf=nan. Using fdr only.
+[074430] Latest FDR date 2026-09-18 not in Yahoo. Using fdr only.
+[181710] Close mismatch on 2026-09-18: fdr=57300, yf=nan. Using fdr only.
+[003495] Close mismatch on 2026-09-18: fdr=21750, yf=nan. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-09-19 01:00:31.461548
+Updating KRX data...
+Updating between dates: 2026-09-11 / 2026-09-19
+FULL rescan codes:
+Total 7 items.
+[0-6] ['000270', '001470', '001680', '086520', '175250', '208350', '350520']
+PARTIAL rescan codes:
+Total 10 items.
+[0-9] ['021820', '032800', '097870', '093240', '334970', '050860', '001080', '169330', '189690', '030960']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-19 01:00:38.426281, no: 0, code 000270 in process
+2026-09-19 01:00:54.215779, no: 1, code 001470 in process
+2026-09-19 01:01:09.973440, no: 2, code 001680 in process
+2026-09-19 01:01:25.727876, no: 3, code 086520 in process
+2026-09-19 01:01:46.735607, no: 4, code 175250 in process
+2026-09-19 01:02:00.169435, no: 5, code 208350 in process
+2026-09-19 01:02:15.496864, no: 6, code 350520 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-19 01:02:31.614236, no: 0, code 021820 in process
+2026-09-19 01:02:37.471873, no: 1, code 032800 in process
+2026-09-19 01:02:43.328032, no: 2, code 097870 in process
+2026-09-19 01:02:49.352226, no: 3, code 093240 in process
+2026-09-19 01:02:55.195797, no: 4, code 334970 in process
+2026-09-19 01:03:01.027380, no: 5, code 050860 in process
+2026-09-19 01:03:06.900625, no: 6, code 001080 in process
+2026-09-19 01:03:12.740269, no: 7, code 169330 in process
+2026-09-19 01:03:18.587088, no: 8, code 189690 in process
+2026-09-19 01:03:24.429466, no: 9, code 030960 in process
+== Update finished ==
+000270 | 1/17
+001080 | 2/17
+001470 | 3/17
+001680 | 4/17
+021820 | 5/17
+030960 | 6/17
+032800 | 7/17
+050860 | 8/17
+086520 | 9/17
+093240 | 10/17
+097870 | 11/17
+169330 | 12/17
+175250 | 13/17
+189690 | 14/17
+208350 | 15/17
+334970 | 16/17
+350520 | 17/17
+sending incremental file list
+000270.png
+001080.png
+001470.png
+001680.png
+021820.png
+030960.png
+032800.png
+050860.png
+086520.png
+093240.png
+097870.png
+169330.png
+175250.png
+189690.png
+208350.png
+334970.png
+350520.png
+df_krx.db
+update_info.txt
+
+sent 6,799,706 bytes  received 379 bytes  13,600,170.00 bytes/sec
+total size is 608,783,253  speedup is 89.53
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+
+sent 21,071,434 bytes  received 54 bytes  42,142,976.00 bytes/sec
+total size is 61,396,800  speedup is 2.91
