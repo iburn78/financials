@@ -1290,3 +1290,117 @@ financial_reports_main.parquet
 
 sent 21,071,434 bytes  received 54 bytes  42,142,976.00 bytes/sec
 total size is 61,396,800  speedup is 2.91
+$376900.KS: possibly delisted; no timezone found
+$043260.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$068790.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$099220.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$020400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$086890.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$0009K0.KS: possibly delisted; no timezone found
+$018000.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$074430.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$475830.KS: possibly delisted; no timezone found
+$076610.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$462860.KS: possibly delisted; no timezone found
+$069920.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$082270.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$083660.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$263720.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$900110.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$028080.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$009620.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$099190.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+$115450.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-20) (Yahoo error = "No data found, symbol may be delisted")
+prices and volumes updates [initiating] 2026-09-20 01:00:06
+[018880] Close mismatch on 2026-09-18: fdr=3450, yf=3445.0. Using fdr only.
+[003490] Close mismatch on 2026-09-18: fdr=29150, yf=29300.0. Using fdr only.
+[217270] Close mismatch on 2026-09-18: fdr=2465, yf=2430.0. Using fdr only.
+[078520] Close mismatch on 2026-09-18: fdr=10750, yf=10940.0. Using fdr only.
+[317770] Close mismatch on 2026-09-18: fdr=2620, yf=2600.0. Using fdr only.
+[445680] Close mismatch on 2026-09-18: fdr=46000, yf=45850.0. Using fdr only.
+[001210] Close mismatch on 2026-09-18: fdr=10950, yf=10850.0. Using fdr only.
+[226950] Close mismatch on 2026-09-18: fdr=112000, yf=111600.0. Using fdr only.
+[179530] Close mismatch on 2026-09-18: fdr=1857, yf=1809.0. Using fdr only.
+[023150] Close mismatch on 2026-09-18: fdr=4195, yf=4080.0. Using fdr only.
+[365590] Close mismatch on 2026-09-18: fdr=1430, yf=1399.0. Using fdr only.
+[003495] Close mismatch on 2026-09-18: fdr=21750, yf=21850.0. Using fdr only.
+[900290] Close mismatch on 2026-09-18: fdr=3425, yf=3400.0. Using fdr only.
+[304360] Close mismatch on 2026-09-18: fdr=20300, yf=20450.0. Using fdr only.
+[417180] Close mismatch on 2026-09-18: fdr=4290, yf=4305.0. Using fdr only.
+[181710] Close mismatch on 2026-09-18: fdr=57300, yf=56700.0. Using fdr only.
+[066970] Close mismatch on 2026-09-18: fdr=110500, yf=111000.0. Using fdr only.
+[025000] Close mismatch on 2026-09-18: fdr=56300, yf=56000.0. Using fdr only.
+[180640] Close mismatch on 2026-09-18: fdr=139200, yf=138800.0. Using fdr only.
+[267270] Close mismatch on 2026-09-18: fdr=140400, yf=139800.0. Using fdr only.
+[005180] Close mismatch on 2026-09-18: fdr=84900, yf=84800.0. Using fdr only.
+[295310] Close mismatch on 2026-09-18: fdr=60400, yf=60000.0. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-09-20 01:00:38.367476
+Updating KRX data...
+Updating between dates: 2026-09-12 / 2026-09-20
+FULL rescan codes:
+Total 4 items.
+[0-3] ['000270', '086520', '175250', '208350']
+PARTIAL rescan codes:
+Total 10 items.
+[0-9] ['032800', '050860', '030960', '169330', '097870', '334970', '001080', '021820', '093240', '189690']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-20 01:00:45.112314, no: 0, code 000270 in process
+2026-09-20 01:01:00.752832, no: 1, code 086520 in process
+2026-09-20 01:01:16.652405, no: 2, code 175250 in process
+2026-09-20 01:01:30.831918, no: 3, code 208350 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-20 01:01:55.560507, no: 0, code 032800 in process
+2026-09-20 01:02:01.386618, no: 1, code 050860 in process
+2026-09-20 01:02:07.252828, no: 2, code 030960 in process
+2026-09-20 01:02:13.067880, no: 3, code 169330 in process
+2026-09-20 01:02:20.849430, no: 4, code 097870 in process
+2026-09-20 01:02:26.682876, no: 5, code 334970 in process
+2026-09-20 01:02:32.482351, no: 6, code 001080 in process
+2026-09-20 01:02:38.323206, no: 7, code 021820 in process
+2026-09-20 01:02:44.140388, no: 8, code 093240 in process
+2026-09-20 01:02:49.969180, no: 9, code 189690 in process
+== Update finished ==
+000270 | 1/14
+001080 | 2/14
+021820 | 3/14
+030960 | 4/14
+032800 | 5/14
+050860 | 6/14
+086520 | 7/14
+093240 | 8/14
+097870 | 9/14
+169330 | 10/14
+175250 | 11/14
+189690 | 12/14
+208350 | 13/14
+334970 | 14/14
+sending incremental file list
+000270.png
+001080.png
+021820.png
+030960.png
+032800.png
+050860.png
+086520.png
+093240.png
+097870.png
+169330.png
+175250.png
+189690.png
+208350.png
+334970.png
+df_krx.db
+update_info.txt
+
+sent 5,841,403 bytes  received 322 bytes  11,683,450.00 bytes/sec
+total size is 608,784,074  speedup is 104.21
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+
+sent 21,071,505 bytes  received 54 bytes  42,143,118.00 bytes/sec
+total size is 61,396,872  speedup is 2.91
