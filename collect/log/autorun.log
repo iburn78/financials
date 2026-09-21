@@ -1860,3 +1860,66 @@ sending incremental file list
 
 sent 263 bytes  received 12 bytes  550.00 bytes/sec
 total size is 61,396,872  speedup is 223,261.35
+$099220.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$028080.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$475830.KS: possibly delisted; no timezone found
+$086890.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$376900.KS: possibly delisted; no timezone found
+$068790.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$020400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$002680.KS: possibly delisted; no timezone found
+$091440.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$043260.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$222800.KS: possibly delisted; no timezone found
+$024840.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$462860.KS: possibly delisted; no timezone found
+$099190.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$082270.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$263720.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$115450.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$038530.KS: possibly delisted; no timezone found
+$0009K0.KS: possibly delisted; no timezone found
+$083660.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$101400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$074430.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$478340.KS: possibly delisted; no timezone found
+$009620.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$900110.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$018000.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$067170.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$069920.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+$076610.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-21) (Yahoo error = "No data found, symbol may be delisted")
+prices and volumes updates [initiating] 2026-09-21 20:00:04
+[181710] Close mismatch on 2026-09-18: fdr=57300, yf=56700.0. Using fdr only.
+[417180] Close mismatch on 2026-09-18: fdr=4290, yf=4305.0. Using fdr only.
+[005180] Close mismatch on 2026-09-18: fdr=84900, yf=84800.0. Using fdr only.
+[217270] Close mismatch on 2026-09-18: fdr=2465, yf=2430.0. Using fdr only.
+[066970] Close mismatch on 2026-09-18: fdr=110500, yf=111000.0. Using fdr only.
+[025000] Close mismatch on 2026-09-18: fdr=56300, yf=56000.0. Using fdr only.
+[018880] Close mismatch on 2026-09-18: fdr=3450, yf=3445.0. Using fdr only.
+[179530] Close mismatch on 2026-09-18: fdr=1857, yf=1809.0. Using fdr only.
+[003495] Close mismatch on 2026-09-18: fdr=21750, yf=21850.0. Using fdr only.
+[226950] Close mismatch on 2026-09-18: fdr=112000, yf=111600.0. Using fdr only.
+[023150] Close mismatch on 2026-09-18: fdr=4195, yf=4080.0. Using fdr only.
+[003490] Close mismatch on 2026-09-18: fdr=29150, yf=29300.0. Using fdr only.
+[347850] Close mismatch on 2026-09-18: fdr=45000, yf=45300.0. Using fdr only.
+[357880] Close mismatch on 2026-09-18: fdr=1874, yf=1866.0. Using fdr only.
+[078520] Close mismatch on 2026-09-18: fdr=10750, yf=10940.0. Using fdr only.
+Error retrieving full data for 0161M0: code 0161M0 not available in FDR
+[304360] Close mismatch on 2026-09-18: fdr=20300, yf=20450.0. Using fdr only.
+[310210] Close mismatch on 2026-09-18: fdr=132800, yf=132000.0. Using fdr only.
+[445680] Close mismatch on 2026-09-18: fdr=46000, yf=45850.0. Using fdr only.
+[365590] Close mismatch on 2026-09-18: fdr=1430, yf=1399.0. Using fdr only.
+[295310] Close mismatch on 2026-09-18: fdr=60400, yf=60000.0. Using fdr only.
+[009410] Close mismatch on 2026-09-18: fdr=1673, yf=1684.0. Using fdr only.
+[267270] Close mismatch on 2026-09-18: fdr=140400, yf=139800.0. Using fdr only.
+[180640] Close mismatch on 2026-09-18: fdr=139200, yf=138800.0. Using fdr only.
+[317770] Close mismatch on 2026-09-18: fdr=2620, yf=2600.0. Using fdr only.
+[001210] Close mismatch on 2026-09-18: fdr=10950, yf=10850.0. Using fdr only.
+[900290] Close mismatch on 2026-09-18: fdr=3425, yf=3400.0. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+sending incremental file list
+
+sent 263 bytes  received 12 bytes  550.00 bytes/sec
+total size is 61,396,872  speedup is 223,261.35
