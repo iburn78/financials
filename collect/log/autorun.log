@@ -2597,3 +2597,163 @@ sending incremental file list
 
 sent 263 bytes  received 12 bytes  550.00 bytes/sec
 total size is 61,366,944  speedup is 223,152.52
+$127120.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$067170.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$068790.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$462860.KS: possibly delisted; no timezone found
+$0009K0.KS: possibly delisted; no timezone found
+$263720.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$083660.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$222800.KS: possibly delisted; no timezone found
+$376900.KS: possibly delisted; no timezone found
+$009620.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$0161M0.KS: possibly delisted; no timezone found
+$086890.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$099190.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$478340.KS: possibly delisted; no timezone found
+$018000.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$074430.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$028080.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$373160.KS: possibly delisted; no timezone found
+$900110.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$069920.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$115450.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$076610.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$464490.KS: possibly delisted; no timezone found
+$099220.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$082270.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$101400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$043260.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$024840.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$0200G0.KS: possibly delisted; no timezone found
+/home/andy/projects/financials/collect/gen_market_dbs.py:143: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  price_db[code] = res['Close']
+/home/andy/projects/financials/collect/gen_market_dbs.py:144: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  volume_db[code] = res['Volume']
+$038530.KS: possibly delisted; no timezone found
+$475830.KS: possibly delisted; no timezone found
+$002680.KS: possibly delisted; no timezone found
+$091440.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$0209J0.KS: possibly delisted; no timezone found
+/home/andy/projects/financials/collect/gen_market_dbs.py:143: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  price_db[code] = res['Close']
+/home/andy/projects/financials/collect/gen_market_dbs.py:144: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  volume_db[code] = res['Volume']
+$020400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$413390.KS: possibly delisted; no timezone found
+prices and volumes updates [initiating] 2026-09-23 01:00:06
+[304360] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[001210] Close mismatch on 2026-09-22: fdr=10230, yf=nan. Using fdr only.
+[084440] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[900290] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[023150] Close mismatch on 2026-09-22: fdr=4105, yf=nan. Using fdr only.
+[310210] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[018880] Close mismatch on 2026-09-22: fdr=3335, yf=nan. Using fdr only.
+[003490] Close mismatch on 2026-09-22: fdr=31650, yf=nan. Using fdr only.
+[18064K] Close mismatch on 2026-09-22: fdr=30950, yf=nan. Using fdr only.
+[365590] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[005180] Close mismatch on 2026-09-22: fdr=84400, yf=nan. Using fdr only.
+[357880] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[191410] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[179530] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[226950] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[417180] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[239340] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[005389] Close mismatch on 2026-09-22: fdr=173600, yf=nan. Using fdr only.
+[181710] Close mismatch on 2026-09-22: fdr=57000, yf=nan. Using fdr only.
+[025000] Close mismatch on 2026-09-22: fdr=56600, yf=nan. Using fdr only.
+[217270] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[005385] Close mismatch on 2026-09-22: fdr=175700, yf=nan. Using fdr only.
+[180640] Close mismatch on 2026-09-22: fdr=141400, yf=nan. Using fdr only.
+[317770] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[003495] Close mismatch on 2026-09-22: fdr=22200, yf=nan. Using fdr only.
+[078520] Close mismatch on 2026-09-22: fdr=10700, yf=nan. Using fdr only.
+[066970] Close mismatch on 2026-09-22: fdr=109300, yf=nan. Using fdr only.
+[058650] Close mismatch on 2026-09-22: fdr=130300, yf=nan. Using fdr only.
+[002630] Close mismatch on 2026-09-22: fdr=1853, yf=nan. Using fdr only.
+[006090] Close mismatch on 2026-09-22: fdr=8820, yf=nan. Using fdr only.
+[295310] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[291810] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[441270] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[483650] Close mismatch on 2026-09-22: fdr=178500, yf=nan. Using fdr only.
+[005387] Close mismatch on 2026-09-22: fdr=176600, yf=nan. Using fdr only.
+[267270] Close mismatch on 2026-09-22: fdr=139100, yf=nan. Using fdr only.
+[005380] Close mismatch on 2026-09-22: fdr=362000, yf=nan. Using fdr only.
+[331380] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[009410] Close mismatch on 2026-09-22: fdr=1641, yf=nan. Using fdr only.
+[347850] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+[445680] Latest FDR date 2026-09-22 not in Yahoo. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-09-23 01:00:59.022141
+Updating KRX data...
+Updating between dates: 2026-09-15 / 2026-09-23
+FULL rescan codes:
+Total 4 items.
+[0-3] ['000270', '086520', '175250', '208350']
+PARTIAL rescan codes:
+Total 11 items.
+[0-10] ['950210', '001080', '021820', '169330', '030960', '334970', '050860', '097870', '032800', '093240', '189690']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-23 01:01:05.640802, no: 0, code 000270 in process
+2026-09-23 01:01:21.586969, no: 1, code 086520 in process
+2026-09-23 01:01:38.829868, no: 2, code 175250 in process
+2026-09-23 01:01:52.268247, no: 3, code 208350 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-23 01:02:16.651724, no: 0, code 950210 in process
+----> no: 0, code 950210 currency not in KRW, skipping
+2026-09-23 01:02:21.838608, no: 1, code 001080 in process
+2026-09-23 01:02:27.652899, no: 2, code 021820 in process
+2026-09-23 01:02:33.483784, no: 3, code 169330 in process
+2026-09-23 01:02:40.301845, no: 4, code 030960 in process
+2026-09-23 01:02:50.098546, no: 5, code 334970 in process
+2026-09-23 01:02:55.938418, no: 6, code 050860 in process
+2026-09-23 01:03:01.942387, no: 7, code 097870 in process
+2026-09-23 01:03:07.820652, no: 8, code 032800 in process
+2026-09-23 01:03:14.359459, no: 9, code 093240 in process
+2026-09-23 01:03:20.230360, no: 10, code 189690 in process
+== Update finished ==
+000270 | 1/15
+001080 | 2/15
+021820 | 3/15
+030960 | 4/15
+032800 | 5/15
+050860 | 6/15
+086520 | 7/15
+093240 | 8/15
+097870 | 9/15
+169330 | 10/15
+175250 | 11/15
+189690 | 12/15
+208350 | 13/15
+334970 | 14/15
+950210 | 15/15
+2026-09-23 01:05:13.720303 | 950210 | quarterly data of 950210 is empty.
+sending incremental file list
+000270.png
+001080.png
+021820.png
+030960.png
+032800.png
+050860.png
+086520.png
+093240.png
+097870.png
+169330.png
+175250.png
+189690.png
+208350.png
+334970.png
+df_krx.db
+update_info.txt
+
+sent 5,846,653 bytes  received 322 bytes  11,693,950.00 bytes/sec
+total size is 608,789,324  speedup is 104.12
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+
+sent 21,042,053 bytes  received 54 bytes  42,084,214.00 bytes/sec
+total size is 61,367,426  speedup is 2.92
