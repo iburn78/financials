@@ -3174,3 +3174,91 @@ sending incremental file list
 
 sent 263 bytes  received 12 bytes  550.00 bytes/sec
 total size is 61,367,426  speedup is 223,154.28
+$074430.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$043260.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$493280.KS: possibly delisted; no timezone found
+$115450.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$091440.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$376900.KS: possibly delisted; no timezone found
+$067170.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$084650.KS: possibly delisted; no timezone found
+$464490.KS: possibly delisted; no timezone found
+$0009K0.KS: possibly delisted; no timezone found
+$086890.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$101400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$009620.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$099220.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$0209J0.KS: possibly delisted; no timezone found
+$0200G0.KS: possibly delisted; no timezone found
+$082270.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$083660.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$024840.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$900110.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$413390.KS: possibly delisted; no timezone found
+$068790.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$475830.KS: possibly delisted; no timezone found
+$018000.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$099190.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$478340.KS: possibly delisted; no timezone found
+$028080.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$076610.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$373160.KS: possibly delisted; no timezone found
+$127120.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$462860.KS: possibly delisted; no timezone found
+$263720.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$0161M0.KS: possibly delisted; no timezone found
+/home/andy/projects/financials/collect/gen_market_dbs.py:143: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  price_db[code] = res['Close']
+/home/andy/projects/financials/collect/gen_market_dbs.py:144: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  volume_db[code] = res['Volume']
+$020400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$222800.KS: possibly delisted; no timezone found
+$038530.KS: possibly delisted; no timezone found
+$069920.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-23) (Yahoo error = "No data found, symbol may be delisted")
+$051360.KS: possibly delisted; no timezone found
+$002680.KS: possibly delisted; no timezone found
+prices and volumes updates [initiating] 2026-09-23 18:00:04
+Error retrieving full data for 0010S0: code 0010S0 not available in FDR
+[424760] Close mismatch on 2026-09-22: fdr=2030, yf=2010.0. Using fdr only.
+[005387] Close mismatch on 2026-09-22: fdr=176600, yf=175500.0. Using fdr only.
+[295310] Close mismatch on 2026-09-22: fdr=58300, yf=58200.0. Using fdr only.
+[357880] Close mismatch on 2026-09-22: fdr=1907, yf=1916.0. Using fdr only.
+[001210] Close mismatch on 2026-09-22: fdr=10230, yf=10140.0. Using fdr only.
+[417180] Close mismatch on 2026-09-22: fdr=4315, yf=4240.0. Using fdr only.
+[300080] Close mismatch on 2026-09-22: fdr=8610, yf=8560.0. Using fdr only.
+[226950] Close mismatch on 2026-09-22: fdr=102800, yf=102200.0. Using fdr only.
+[304360] Close mismatch on 2026-09-22: fdr=20150, yf=20100.0. Using fdr only.
+[179530] Close mismatch on 2026-09-22: fdr=1809, yf=1783.0. Using fdr only.
+[002630] Close mismatch on 2026-09-22: fdr=1853, yf=1855.0. Using fdr only.
+[267270] Close mismatch on 2026-09-22: fdr=139100, yf=137500.0. Using fdr only.
+[445680] Close mismatch on 2026-09-22: fdr=47450, yf=47200.0. Using fdr only.
+[015360] Close mismatch on 2026-09-22: fdr=14510, yf=14470.0. Using fdr only.
+[025000] Close mismatch on 2026-09-22: fdr=56600, yf=56500.0. Using fdr only.
+[005180] Close mismatch on 2026-09-22: fdr=84400, yf=84800.0. Using fdr only.
+[900290] Close mismatch on 2026-09-22: fdr=3550, yf=3530.0. Using fdr only.
+[066970] Close mismatch on 2026-09-22: fdr=109300, yf=108400.0. Using fdr only.
+[365590] Close mismatch on 2026-09-22: fdr=1275, yf=1271.0. Using fdr only.
+[005380] Close mismatch on 2026-09-22: fdr=362000, yf=360500.0. Using fdr only.
+[310210] Close mismatch on 2026-09-22: fdr=150000, yf=146700.0. Using fdr only.
+[417840] Close mismatch on 2026-09-22: fdr=16040, yf=15880.0. Using fdr only.
+[003490] Close mismatch on 2026-09-22: fdr=31650, yf=31400.0. Using fdr only.
+[483650] Close mismatch on 2026-09-22: fdr=178500, yf=179200.0. Using fdr only.
+[005389] Close mismatch on 2026-09-22: fdr=173600, yf=174500.0. Using fdr only.
+[317770] Close mismatch on 2026-09-22: fdr=2620, yf=2635.0. Using fdr only.
+[018880] Close mismatch on 2026-09-22: fdr=3335, yf=3320.0. Using fdr only.
+[078520] Close mismatch on 2026-09-22: fdr=10700, yf=10660.0. Using fdr only.
+[441270] Close mismatch on 2026-09-22: fdr=8340, yf=8360.0. Using fdr only.
+[180640] Close mismatch on 2026-09-22: fdr=141400, yf=143500.0. Using fdr only.
+[900270] Close mismatch on 2026-09-22: fdr=2800, yf=2770.0. Using fdr only.
+[347850] Close mismatch on 2026-09-22: fdr=43000, yf=42800.0. Using fdr only.
+[006090] Close mismatch on 2026-09-22: fdr=8820, yf=8800.0. Using fdr only.
+[181710] Close mismatch on 2026-09-22: fdr=57000, yf=57200.0. Using fdr only.
+[004710] Close mismatch on 2026-09-22: fdr=9760, yf=9810.0. Using fdr only.
+[005385] Close mismatch on 2026-09-22: fdr=175700, yf=175000.0. Using fdr only.
+[009410] Close mismatch on 2026-09-22: fdr=1641, yf=1629.0. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+sending incremental file list
+
+sent 263 bytes  received 12 bytes  550.00 bytes/sec
+total size is 61,367,426  speedup is 223,154.28
