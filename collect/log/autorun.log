@@ -4006,3 +4006,94 @@ sending incremental file list
 
 sent 262 bytes  received 12 bytes  548.00 bytes/sec
 total size is 61,366,526  speedup is 223,965.42
+$462860.KS: possibly delisted; no timezone found
+$099220.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$024840.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$074430.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$475830.KS: possibly delisted; no timezone found
+$0161M0.KS: possibly delisted; no timezone found
+$493280.KS: possibly delisted; no timezone found
+$002680.KS: possibly delisted; no timezone found
+$028080.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$084650.KS: possibly delisted; no timezone found
+$478340.KS: possibly delisted; no timezone found
+$067170.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$127120.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$051360.KS: possibly delisted; no timezone found
+$263720.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$0009K0.KS: possibly delisted; no timezone found
+$464490.KS: possibly delisted; no timezone found
+$018000.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$069920.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$0010S0.KS: possibly delisted; no timezone found
+$086890.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$222800.KS: possibly delisted; no timezone found
+$0200G0.KS: possibly delisted; no timezone found
+$373160.KS: possibly delisted; no timezone found
+$038530.KS: possibly delisted; no timezone found
+$082270.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$413390.KS: possibly delisted; no timezone found
+$020400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$099190.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$076610.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$009620.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$376900.KS: possibly delisted; no timezone found
+$101400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$091440.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$068790.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$083660.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$043260.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$0209J0.KS: possibly delisted; no timezone found
+/home/andy/projects/financials/collect/gen_market_dbs.py:143: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  price_db[code] = res['Close']
+/home/andy/projects/financials/collect/gen_market_dbs.py:144: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  volume_db[code] = res['Volume']
+$115450.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+$900110.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-24) (Yahoo error = "No data found, symbol may be delisted")
+prices and volumes updates [initiating] 2026-09-24 18:00:05
+[483650] Close mismatch on 2026-09-23: fdr=183100, yf=182100.0. Using fdr only.
+[001210] Close mismatch on 2026-09-23: fdr=9960, yf=9840.0. Using fdr only.
+[009410] Close mismatch on 2026-09-23: fdr=1627, yf=1618.0. Using fdr only.
+[384470] Close mismatch on 2026-09-23: fdr=2555, yf=2565.0. Using fdr only.
+[084440] Close mismatch on 2026-09-23: fdr=5200, yf=5210.0. Using fdr only.
+[424760] Close mismatch on 2026-09-23: fdr=2095, yf=2120.0. Using fdr only.
+[005387] Close mismatch on 2026-09-23: fdr=177600, yf=177300.0. Using fdr only.
+[417180] Close mismatch on 2026-09-23: fdr=4200, yf=4010.0. Using fdr only.
+[005180] Close mismatch on 2026-09-23: fdr=83800, yf=84300.0. Using fdr only.
+[066970] Close mismatch on 2026-09-23: fdr=109500, yf=109100.0. Using fdr only.
+[357880] Close mismatch on 2026-09-23: fdr=1942, yf=1937.0. Using fdr only.
+[004710] Close mismatch on 2026-09-23: fdr=9930, yf=9900.0. Using fdr only.
+[295310] Close mismatch on 2026-09-23: fdr=64100, yf=63100.0. Using fdr only.
+[304360] Close mismatch on 2026-09-23: fdr=20200, yf=20150.0. Using fdr only.
+[179530] Close mismatch on 2026-09-23: fdr=1768, yf=1754.0. Using fdr only.
+[217270] Close mismatch on 2026-09-23: fdr=2385, yf=2365.0. Using fdr only.
+[259960] Close mismatch on 2026-09-23: fdr=198500, yf=198000.0. Using fdr only.
+[226950] Close mismatch on 2026-09-23: fdr=102300, yf=102700.0. Using fdr only.
+[003495] Close mismatch on 2026-09-23: fdr=22250, yf=22200.0. Using fdr only.
+[006090] Close mismatch on 2026-09-23: fdr=8840, yf=8930.0. Using fdr only.
+[180640] Close mismatch on 2026-09-23: fdr=140500, yf=140100.0. Using fdr only.
+[181710] Close mismatch on 2026-09-23: fdr=56100, yf=56000.0. Using fdr only.
+[018880] Close mismatch on 2026-09-23: fdr=3245, yf=3220.0. Using fdr only.
+[900270] Close mismatch on 2026-09-23: fdr=2825, yf=2765.0. Using fdr only.
+[417840] Close mismatch on 2026-09-23: fdr=17230, yf=17080.0. Using fdr only.
+[078520] Close mismatch on 2026-09-23: fdr=10580, yf=10530.0. Using fdr only.
+[005380] Close mismatch on 2026-09-23: fdr=357000, yf=353500.0. Using fdr only.
+[18064K] Close mismatch on 2026-09-23: fdr=30100, yf=30150.0. Using fdr only.
+[300080] Close mismatch on 2026-09-23: fdr=8540, yf=8500.0. Using fdr only.
+[445680] Close mismatch on 2026-09-23: fdr=49050, yf=49600.0. Using fdr only.
+[058650] Close mismatch on 2026-09-23: fdr=127600, yf=127400.0. Using fdr only.
+[015360] Close mismatch on 2026-09-23: fdr=14600, yf=14570.0. Using fdr only.
+[002630] Close mismatch on 2026-09-23: fdr=1820, yf=1829.0. Using fdr only.
+[347850] Close mismatch on 2026-09-23: fdr=44650, yf=44500.0. Using fdr only.
+[365590] Close mismatch on 2026-09-23: fdr=1299, yf=1281.0. Using fdr only.
+[005389] Close mismatch on 2026-09-23: fdr=174800, yf=174300.0. Using fdr only.
+[025000] Close mismatch on 2026-09-23: fdr=56800, yf=57000.0. Using fdr only.
+[310210] Close mismatch on 2026-09-23: fdr=145700, yf=147300.0. Using fdr only.
+[900290] Close mismatch on 2026-09-23: fdr=3440, yf=3385.0. Using fdr only.
+[267270] Close mismatch on 2026-09-23: fdr=130900, yf=129700.0. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+sending incremental file list
+
+sent 262 bytes  received 12 bytes  548.00 bytes/sec
+total size is 61,366,526  speedup is 223,965.42
