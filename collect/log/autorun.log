@@ -5019,3 +5019,160 @@ sending incremental file list
 
 sent 262 bytes  received 12 bytes  548.00 bytes/sec
 total size is 61,366,530  speedup is 223,965.44
+$101400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: 002680.KS"}}}
+$002680.KS: possibly delisted; no timezone found
+$464490.KS: possibly delisted; no timezone found
+$373160.KS: possibly delisted; no timezone found
+$024840.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$083660.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$376900.KS: possibly delisted; no timezone found
+$0209J0.KS: possibly delisted; no timezone found
+$478340.KS: possibly delisted; no timezone found
+$0161M0.KS: possibly delisted; no timezone found
+$0200G0.KS: possibly delisted; no timezone found
+$462860.KS: possibly delisted; no timezone found
+$475830.KS: possibly delisted; no timezone found
+$099220.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$009620.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$067170.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$082270.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$084650.KS: possibly delisted; no timezone found
+$127120.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$028080.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$0010S0.KS: possibly delisted; no timezone found
+$222800.KS: possibly delisted; no timezone found
+$263720.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$0009K0.KS: possibly delisted; no timezone found
+$018000.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$068790.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$086890.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$413390.KS: possibly delisted; no timezone found
+$020400.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$076610.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$069920.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$099190.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$493280.KS: possibly delisted; no timezone found
+$115450.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$038530.KS: possibly delisted; no timezone found
+$900110.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$074430.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$051360.KS: possibly delisted; no timezone found
+$091440.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+$043260.KS: possibly delisted; no price data found  (1d 2016-01-01 -> 2026-09-26) (Yahoo error = "No data found, symbol may be delisted")
+prices and volumes updates [initiating] 2026-09-26 01:00:04
+[900270] Close mismatch on 2026-09-23: fdr=2825, yf=2765.0. Using fdr only.
+[483650] Close mismatch on 2026-09-23: fdr=183100, yf=182100.0. Using fdr only.
+[18064K] Close mismatch on 2026-09-23: fdr=30100, yf=30150.0. Using fdr only.
+[015360] Close mismatch on 2026-09-23: fdr=14600, yf=14570.0. Using fdr only.
+[226950] Close mismatch on 2026-09-23: fdr=102300, yf=102700.0. Using fdr only.
+[217270] Close mismatch on 2026-09-23: fdr=2385, yf=2365.0. Using fdr only.
+[084440] Close mismatch on 2026-09-23: fdr=5200, yf=5210.0. Using fdr only.
+[417840] Close mismatch on 2026-09-23: fdr=17230, yf=17080.0. Using fdr only.
+[066970] Close mismatch on 2026-09-23: fdr=109500, yf=109100.0. Using fdr only.
+[417180] Close mismatch on 2026-09-23: fdr=4200, yf=4010.0. Using fdr only.
+[003495] Close mismatch on 2026-09-23: fdr=22250, yf=22200.0. Using fdr only.
+[295310] Close mismatch on 2026-09-23: fdr=64100, yf=63100.0. Using fdr only.
+[078520] Close mismatch on 2026-09-23: fdr=10580, yf=10530.0. Using fdr only.
+[384470] Close mismatch on 2026-09-23: fdr=2555, yf=2565.0. Using fdr only.
+[267270] Close mismatch on 2026-09-23: fdr=130900, yf=129700.0. Using fdr only.
+[018880] Close mismatch on 2026-09-23: fdr=3245, yf=3220.0. Using fdr only.
+[347850] Close mismatch on 2026-09-23: fdr=44650, yf=44500.0. Using fdr only.
+[002630] Close mismatch on 2026-09-23: fdr=1820, yf=1829.0. Using fdr only.
+[005380] Close mismatch on 2026-09-23: fdr=357000, yf=353500.0. Using fdr only.
+[179530] Close mismatch on 2026-09-23: fdr=1768, yf=1754.0. Using fdr only.
+[005387] Close mismatch on 2026-09-23: fdr=177600, yf=177300.0. Using fdr only.
+[009410] Close mismatch on 2026-09-23: fdr=1627, yf=1618.0. Using fdr only.
+[310210] Close mismatch on 2026-09-23: fdr=145700, yf=147300.0. Using fdr only.
+[004710] Close mismatch on 2026-09-23: fdr=9930, yf=9900.0. Using fdr only.
+[180640] Close mismatch on 2026-09-23: fdr=140500, yf=140100.0. Using fdr only.
+[424760] Close mismatch on 2026-09-23: fdr=2095, yf=2120.0. Using fdr only.
+[005389] Close mismatch on 2026-09-23: fdr=174800, yf=174300.0. Using fdr only.
+[304360] Close mismatch on 2026-09-23: fdr=20200, yf=20150.0. Using fdr only.
+[181710] Close mismatch on 2026-09-23: fdr=56100, yf=56000.0. Using fdr only.
+[445680] Close mismatch on 2026-09-23: fdr=49050, yf=49600.0. Using fdr only.
+[001210] Close mismatch on 2026-09-23: fdr=9960, yf=9840.0. Using fdr only.
+[365590] Close mismatch on 2026-09-23: fdr=1299, yf=1281.0. Using fdr only.
+[357880] Close mismatch on 2026-09-23: fdr=1942, yf=1937.0. Using fdr only.
+[259960] Close mismatch on 2026-09-23: fdr=198500, yf=198000.0. Using fdr only.
+[900290] Close mismatch on 2026-09-23: fdr=3440, yf=3385.0. Using fdr only.
+[005180] Close mismatch on 2026-09-23: fdr=83800, yf=84300.0. Using fdr only.
+[006090] Close mismatch on 2026-09-23: fdr=8840, yf=8930.0. Using fdr only.
+[058650] Close mismatch on 2026-09-23: fdr=127600, yf=127400.0. Using fdr only.
+[025000] Close mismatch on 2026-09-23: fdr=56800, yf=57000.0. Using fdr only.
+[300080] Close mismatch on 2026-09-23: fdr=8540, yf=8500.0. Using fdr only.
+current run is ignored, the current fdr gathering is corrupt
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-09-26 01:00:47.808500
+Updating KRX data...
+Updating between dates: 2026-09-18 / 2026-09-26
+FULL rescan codes:
+Total 4 items.
+[0-3] ['030530', '058860', '175250', '950210']
+PARTIAL rescan codes:
+Total 11 items.
+[0-10] ['189690', '050860', '093240', '021820', '001080', '030960', '169330', '334970', '950250', '097870', '032800']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-26 01:00:54.368679, no: 0, code 030530 in process
+2026-09-26 01:01:11.352878, no: 1, code 058860 in process
+2026-09-26 01:01:26.779437, no: 2, code 175250 in process
+2026-09-26 01:01:40.176950, no: 3, code 950210 in process
+----> no: 3, code 950210 currency not in KRW, skipping
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-26 01:01:54.739276, no: 0, code 189690 in process
+2026-09-26 01:02:00.593294, no: 1, code 050860 in process
+2026-09-26 01:02:06.447260, no: 2, code 093240 in process
+2026-09-26 01:02:12.317838, no: 3, code 021820 in process
+2026-09-26 01:02:18.150838, no: 4, code 001080 in process
+2026-09-26 01:02:24.031472, no: 5, code 030960 in process
+2026-09-26 01:02:29.873851, no: 6, code 169330 in process
+2026-09-26 01:02:35.888837, no: 7, code 334970 in process
+2026-09-26 01:02:41.744476, no: 8, code 950250 in process
+----> no: 8, code 950250 currency not in KRW, skipping
+2026-09-26 01:02:46.918818, no: 9, code 097870 in process
+2026-09-26 01:02:52.762459, no: 10, code 032800 in process
+== Update finished ==
+001080 | 1/15
+021820 | 2/15
+030530 | 3/15
+030960 | 4/15
+032800 | 5/15
+050860 | 6/15
+058860 | 7/15
+093240 | 8/15
+097870 | 9/15
+169330 | 10/15
+175250 | 11/15
+189690 | 12/15
+334970 | 13/15
+950210 | 14/15
+2026-09-26 01:04:32.012765 | 950210 | quarterly data of 950210 is empty.
+950250 | 15/15
+2026-09-26 01:04:33.484082 | 950250 | quarterly data of 950250 is empty.
+sending incremental file list
+001080.png
+021820.png
+030530.png
+030960.png
+032800.png
+050860.png
+058860.png
+093240.png
+097870.png
+169330.png
+175250.png
+189690.png
+334970.png
+df_krx.db
+update_info.txt
+
+sent 5,027,734 bytes  received 303 bytes  10,056,074.00 bytes/sec
+total size is 608,867,260  speedup is 121.09
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+
+sent 21,041,163 bytes  received 54 bytes  42,082,434.00 bytes/sec
+total size is 61,366,537  speedup is 2.92
