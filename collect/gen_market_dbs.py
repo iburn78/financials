@@ -137,14 +137,34 @@ def gen_market_DB(paths, START_DATE):
 
         # Replace the entire price/volume data for certain stocks
         # filled until yesterday
+        new_prices = {}
+        new_volumes = {}
+
         for code in code_list_to_fully_replace:
             try:
                 code, res = _fetch(code, START_DATE)
-                price_db[code] = res['Close']
-                volume_db[code] = res['Volume']
+                new_prices[code] = res['Close']
+                new_volumes[code] = res['Volume']
             except Exception as e:
                 print(f"Error retrieving full data for {code}: {e}")
-                continue  # Skip if there is an error
+                continue
+
+        if new_prices:
+            price_db = price_db.drop(columns=new_prices.keys(), errors='ignore')
+            price_db = pd.concat([price_db, pd.DataFrame(new_prices)], axis=1)
+
+        if new_volumes:
+            volume_db = volume_db.drop(columns=new_volumes.keys(), errors='ignore')
+            volume_db = pd.concat([volume_db, pd.DataFrame(new_volumes)], axis=1)
+
+        # for code in code_list_to_fully_replace:
+        #     try:
+        #         code, res = _fetch(code, START_DATE)
+        #         price_db[code] = res['Close']
+        #         volume_db[code] = res['Volume']
+        #     except Exception as e:
+        #         print(f"Error retrieving full data for {code}: {e}")
+        #         continue  # Skip if there is an error
     
         # snapshot update should be done after full replaces above
         for date in dates_to_update:
