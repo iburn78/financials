@@ -306,7 +306,14 @@ def merge_update(A, F=None, P=None, index_cols=['code', 'fs_div', 'account_nm'])
 
 def generate_krx_data(sql_db_creation=True): 
     pd_ = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # .. 
-    df_krx = fdr.StockListing('KRX')
+    prev_day = (pd.Timestamp.today().normalize()-pd.Timedelta(days=1)).date().strftime("%Y%m%d")
+    try:
+        df_krx = fdr.StockListing('KRX')
+        checker = df_krx.set_index('Code').loc['005930', 'Close']
+        if isinstance(checker, str) or checker is None:
+            df_krx = fdr.StockListing('KRX', date_req=prev_day)
+    except:
+        df_krx = fdr.StockListing('KRX', date_req=prev_day)
 
     df_krx.drop(columns=['ChangeCode', 'Changes', 'ChagesRatio'], inplace=True)
     df_krx = df_krx.set_index('Code')
