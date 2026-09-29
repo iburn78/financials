@@ -1,0 +1,68 @@
+Company health data collection initiated at 2026-09-30 02:00:18.899189
+Updating KRX data...
+Updating between dates: 2026-09-22 / 2026-09-30
+FULL rescan codes:
+Total 40 items.
+[0-39] ['000650', '002240', '004410', '005870', '008700', '013000', '015750', '019010', '030530', '033250', '040420', '044780', '045300', '056360', '058860', '060560', '083550', '088290', '090410', '090850', '099390', '101170', '106190', '127980', '140670', '145720', '169330', '185490', '226400', '234300', '332290', '334970', '389020', '417180', '417860', '466410', '469750', '498390', '900250', '950210']
+PARTIAL rescan codes:
+Total 10 items.
+[0-9] ['030960', '093240', '001080', '097870', '169330', '189690', '032800', '950250', '050860', '021820']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-30 02:00:25.810148, no: 0, code 000650 in process
+2026-09-30 02:00:47.889615, no: 1, code 002240 in process
+2026-09-30 02:01:05.149400, no: 2, code 004410 in process
+2026-09-30 02:01:23.221612, no: 3, code 005870 in process
+2026-09-30 02:01:39.682731, no: 4, code 008700 in process
+----> no: 4, code 008700 currency not in KRW, skipping
+2026-09-30 02:01:44.982382, no: 5, code 013000 in process
+2026-09-30 02:02:01.004105, no: 6, code 015750 in process
+2026-09-30 02:02:17.426084, no: 7, code 019010 in process
+2026-09-30 02:02:34.634386, no: 8, code 030530 in process
+2026-09-30 02:02:50.499796, no: 9, code 033250 in process
+2026-09-30 02:03:00.352412, no: 10, code 040420 in process
+2026-09-30 02:03:17.772783, no: 11, code 044780 in process
+2026-09-30 02:03:35.405899, no: 12, code 045300 in process
+2026-09-30 02:03:53.802909, no: 13, code 056360 in process
+2026-09-30 02:04:11.209649, no: 14, code 058860 in process
+2026-09-30 02:04:28.523030, no: 15, code 060560 in process
+2026-09-30 02:04:48.115357, no: 16, code 083550 in process
+2026-09-30 02:05:07.104738, no: 17, code 088290 in process
+2026-09-30 02:05:24.239398, no: 18, code 090410 in process
+2026-09-30 02:05:42.621855, no: 19, code 090850 in process
+2026-09-30 02:05:59.580998, no: 20, code 099390 in process
+2026-09-30 02:06:10.783237, no: 21, code 101170 in process
+2026-09-30 02:06:28.127793, no: 22, code 106190 in process
+2026-09-30 02:06:45.377012, no: 23, code 127980 in process
+2026-09-30 02:06:54.877211, no: 24, code 140670 in process
+2026-09-30 02:07:09.958401, no: 25, code 145720 in process
+2026-09-30 02:07:26.655411, no: 26, code 169330 in process
+2026-09-30 02:07:33.425760, no: 27, code 185490 in process
+2026-09-30 02:07:50.276814, no: 28, code 226400 in process
+2026-09-30 02:08:05.865610, no: 29, code 234300 in process
+2026-09-30 02:08:22.676059, no: 30, code 332290 in process
+2026-09-30 02:08:34.251843, no: 31, code 334970 in process
+2026-09-30 02:08:42.336845, no: 32, code 389020 in process
+2026-09-30 02:08:51.940086, no: 33, code 417180 in process
+2026-09-30 02:09:01.890529, no: 34, code 417860 in process
+2026-09-30 02:09:12.914325, no: 35, code 466410 in process
+2026-09-30 02:09:21.050760, no: 36, code 469750 in process
+2026-09-30 02:09:29.335448, no: 37, code 498390 in process
+2026-09-30 02:09:36.853602, no: 38, code 900250 in process
+----> no: 38, code 900250 currency not in KRW, skipping
+2026-09-30 02:09:42.163110, no: 39, code 950210 in process
+----> no: 39, code 950210 currency not in KRW, skipping
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-09-30 02:09:57.285673, no: 0, code 030960 in process
+2026-09-30 02:10:03.163159, no: 1, code 093240 in process
+2026-09-30 02:10:09.025595, no: 2, code 001080 in process
+2026-09-30 02:10:14.993043, no: 3, code 097870 in process
+2026-09-30 02:10:20.858625, no: 4, code 169330 in process
+2026-09-30 02:10:26.751001, no: 5, code 189690 in process
+2026-09-30 02:10:32.615944, no: 6, code 032800 in process
+2026-09-30 02:10:38.558779, no: 7, code 950250 in process
+----> no: 7, code 950250 currency not in KRW, skipping
+2026-09-30 02:10:44.105946, no: 8, code 050860 in process
+2026-09-30 02:10:50.008034, no: 9, code 021820 in process
+== Update finished ==
