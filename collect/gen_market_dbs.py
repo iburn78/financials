@@ -11,8 +11,11 @@ from financials.tools.dc_tools import pvi_paths
 END_DATE_fdr = (pd.Timestamp.today().normalize()-pd.Timedelta(days=1)).date()
 
 def _fetch(code, START_DATE):
-    fdr_data = fdr.DataReader(code, START_DATE, END_DATE_fdr)
-    return fdr_data[['Close', 'Volume']]
+    try:
+        fdr_data = fdr.DataReader(code, START_DATE, END_DATE_fdr)
+        return code, fdr_data[['Close', 'Volume']]
+    except Exception as e:
+        return code, e
 
 # this is only available through CACHE from 2026-03-08
 def _get_close(date_req = END_DATE_fdr):
@@ -21,7 +24,7 @@ def _get_close(date_req = END_DATE_fdr):
     if date_req == '20260608': date_req = '20260605'
     if date_req == '20260908': date_req = '20260907'
     # ------------------------------------------------
-    _prev = fdr.StockListing('KRX', date_req)[['Code', 'Market', 'Stocks']]
+    _prev = fdr.StockListing('KRX', date_req)[['Code', 'Market', 'Close', 'Volume', 'Stocks']]
     return _prev.loc[_prev['Market'].str.contains('KOSPI|KOSDAQ')]
 
 def initialization(START_DATE, paths, workers=8):
@@ -31,11 +34,13 @@ def initialization(START_DATE, paths, workers=8):
     codelist = _get_close()['Code']
     fetch = partial(_fetch, START_DATE=START_DATE)
 
-    # parallel download version: 8 request is usually safe
+    # parallel download version: 8 requests are usually safe
     with ThreadPoolExecutor(max_workers=workers) as executor:
         results = executor.map(fetch, codelist)
-        for result in results:
-            code, res = result
+        for code, res in results:
+            if isinstance(res, Exception):
+                print(f"{code}: {res}")
+                continue
             price_data[code] = res['Close']
             volume_data[code] = res['Volume']
 
@@ -74,11 +79,15 @@ def gen_market_DB(paths, START_DATE):
 
         last_available_close = _get_close(dates_to_update[0])
         intersection = pd.merge(last_available_close, prev_close, on=['Code', 'Stocks'], how='inner')
+
+        # get codes that has different Stocks (outstanding shares)
         code_list_to_fully_replace = list(set(prev_close['Code']) - set(intersection['Code']))
+
+        # get codes newly added
+        code_list_to_fully_replace += list(set(prev_close['Code']) - set(price_db.columns))
 
         new_prices = {}
         new_volumes = {}
-
         for code in code_list_to_fully_replace:
             try:
                 code, res = _fetch(code, START_DATE)
