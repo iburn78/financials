@@ -1272,3 +1272,111 @@ Company health data collection initiated at 2026-10-10 02:00:13.732048
 Updating KRX data...
 Company health data collection initiated at 2026-10-11 02:00:14.380522
 Updating KRX data...
+Company health data collection initiated at 2026-10-12 02:00:16.510195
+Updating KRX data...
+Updating between dates: 2026-10-01 / 2026-10-12
+FULL rescan codes:
+Total 74 items.
+[0-73] ['000020', '000250', '000480', '003540', '006910', '007110', '007680', '009310', '009620', '013720', '015590', '018290', '019490', '023160', '024090', '025550', '026040', '026940', '027050', '027710', '032860', '033240', '033920', '038870', '043340', '043710', '044180', '044960', '048410', '054210', '055550', '058860', '065420', '065950', '066430', '068330', '069330', '069920', '071090', '072990', '073570', '085670', '088790', '099520', '101000', '123010', '123040', '128540', '131400', '136480', '146060', '196450', '204620', '221800', '244460', '248170', '250060', '258830', '261520', '263770', '282620', '288180', '298830', '307280', '307750', '310200', '310210', '322310', '376180', '376900', '406820', '408900', '445680', '950220']
+PARTIAL rescan codes:
+Total 15 items.
+[0-14] ['021880', '099750', '033200', '018500', '001570', '002630', '448730', '020180', '060310', '092440', '001720', '289080', '226340', '190650', '067010']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-12 02:00:23.258591, no: 0, code 000020 in process
+2026-10-12 02:00:39.000515, no: 1, code 000250 in process
+2026-10-12 02:00:55.504282, no: 2, code 000480 in process
+2026-10-12 02:01:11.223453, no: 3, code 003540 in process
+2026-10-12 02:01:19.562445, no: 4, code 006910 in process
+2026-10-12 02:01:35.113898, no: 5, code 007110 in process
+2026-10-12 02:01:50.776908, no: 6, code 007680 in process
+2026-10-12 02:02:04.578350, no: 7, code 009310 in process
+2026-10-12 02:02:21.370557, no: 8, code 009620 in process
+2026-10-12 02:02:37.121633, no: 9, code 013720 in process
+2026-10-12 02:02:53.964137, no: 10, code 015590 in process
+2026-10-12 02:03:10.192776, no: 11, code 018290 in process
+2026-10-12 02:03:25.729143, no: 12, code 019490 in process
+2026-10-12 02:03:41.743669, no: 13, code 023160 in process
+2026-10-12 02:03:57.365480, no: 14, code 024090 in process
+2026-10-12 02:04:13.316737, no: 15, code 025550 in process
+2026-10-12 02:04:29.178845, no: 16, code 026040 in process
+2026-10-12 02:04:45.138481, no: 17, code 026940 in process
+2026-10-12 02:05:00.348915, no: 18, code 027050 in process
+2026-10-12 02:05:15.705823, no: 19, code 027710 in process
+2026-10-12 02:05:31.320839, no: 20, code 032860 in process
+2026-10-12 02:05:47.463257, no: 21, code 033240 in process
+2026-10-12 02:06:03.127243, no: 22, code 033920 in process
+2026-10-12 02:06:18.973910, no: 23, code 038870 in process
+2026-10-12 02:06:35.202878, no: 24, code 043340 in process
+2026-10-12 02:06:50.623587, no: 25, code 043710 in process
+2026-10-12 02:07:06.119817, no: 26, code 044180 in process
+2026-10-12 02:07:22.205795, no: 27, code 044960 in process
+2026-10-12 02:07:38.559538, no: 28, code 048410 in process
+2026-10-12 02:07:54.109627, no: 29, code 054210 in process
+2026-10-12 02:08:09.928348, no: 30, code 055550 in process
+2026-10-12 02:08:18.343543, no: 31, code 058860 in process
+2026-10-12 02:08:33.674577, no: 32, code 065420 in process
+2026-10-12 02:08:49.095806, no: 33, code 065950 in process
+2026-10-12 02:09:04.534196, no: 34, code 066430 in process
+2026-10-12 02:09:20.658281, no: 35, code 068330 in process
+2026-10-12 02:09:38.205014, no: 36, code 069330 in process
+2026-10-12 02:09:53.758568, no: 37, code 069920 in process
+2026-10-12 02:10:09.670216, no: 38, code 071090 in process
+2026-10-12 02:10:25.503584, no: 39, code 072990 in process
+2026-10-12 02:10:40.186104, no: 40, code 073570 in process
+2026-10-12 02:10:55.770428, no: 41, code 085670 in process
+2026-10-12 02:11:11.835052, no: 42, code 088790 in process
+----> no: 42, code 088790 unknown exception; process suspended and to be re-tried
+('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+** API-changed **
+2026-10-12 02:27:18.527420, no: 42, code 088790 in process
+2026-10-12 02:27:33.867225, no: 43, code 099520 in process
+2026-10-12 02:27:49.799850, no: 44, code 101000 in process
+2026-10-12 02:28:05.675119, no: 45, code 123010 in process
+2026-10-12 02:28:20.236319, no: 46, code 123040 in process
+2026-10-12 02:28:35.640259, no: 47, code 128540 in process
+2026-10-12 02:28:48.946779, no: 48, code 131400 in process
+2026-10-12 02:29:05.128944, no: 49, code 136480 in process
+2026-10-12 02:29:20.637383, no: 50, code 146060 in process
+2026-10-12 02:29:29.059387, no: 51, code 196450 in process
+2026-10-12 02:29:45.318643, no: 52, code 204620 in process
+2026-10-12 02:29:59.207337, no: 53, code 221800 in process
+2026-10-12 02:30:07.318549, no: 54, code 244460 in process
+2026-10-12 02:30:19.459356, no: 55, code 248170 in process
+2026-10-12 02:30:36.538112, no: 56, code 250060 in process
+2026-10-12 02:30:51.320564, no: 57, code 258830 in process
+2026-10-12 02:31:05.867202, no: 58, code 261520 in process
+2026-10-12 02:31:12.062539, no: 59, code 263770 in process
+2026-10-12 02:31:25.816504, no: 60, code 282620 in process
+2026-10-12 02:31:31.605680, no: 61, code 288180 in process
+2026-10-12 02:31:39.689375, no: 62, code 298830 in process
+2026-10-12 02:31:48.309628, no: 63, code 307280 in process
+2026-10-12 02:31:59.422095, no: 64, code 307750 in process
+2026-10-12 02:32:10.198261, no: 65, code 310200 in process
+2026-10-12 02:32:21.826813, no: 66, code 310210 in process
+2026-10-12 02:32:31.549448, no: 67, code 322310 in process
+2026-10-12 02:32:43.255679, no: 68, code 376180 in process
+2026-10-12 02:32:53.097697, no: 69, code 376900 in process
+2026-10-12 02:33:01.357915, no: 70, code 406820 in process
+2026-10-12 02:33:09.750734, no: 71, code 408900 in process
+2026-10-12 02:33:18.785940, no: 72, code 445680 in process
+2026-10-12 02:33:27.103112, no: 73, code 950220 in process
+----> no: 73, code 950220 currency not in KRW, skipping
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-12 02:33:42.654368, no: 0, code 021880 in process
+2026-10-12 02:33:50.007644, no: 1, code 099750 in process
+2026-10-12 02:33:57.169687, no: 2, code 033200 in process
+2026-10-12 02:34:04.340731, no: 3, code 018500 in process
+2026-10-12 02:34:11.499433, no: 4, code 001570 in process
+2026-10-12 02:34:18.713906, no: 5, code 002630 in process
+2026-10-12 02:34:25.878366, no: 6, code 448730 in process
+2026-10-12 02:34:32.048144, no: 7, code 020180 in process
+2026-10-12 02:34:39.182866, no: 8, code 060310 in process
+2026-10-12 02:34:46.391459, no: 9, code 092440 in process
+2026-10-12 02:34:53.599874, no: 10, code 001720 in process
+2026-10-12 02:35:00.824035, no: 11, code 289080 in process
+2026-10-12 02:35:08.017465, no: 12, code 226340 in process
+2026-10-12 02:35:15.050679, no: 13, code 190650 in process
+2026-10-12 02:35:22.293821, no: 14, code 067010 in process
+== Update finished ==
