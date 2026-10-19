@@ -1815,3 +1815,58 @@ Financial data collection log >>
 2026-10-19 02:07:40.321683, no: 15, code 365550 in process
 2026-10-19 02:07:46.319898, no: 16, code 021880 in process
 == Update finished ==
+Company health data collection initiated at 2026-10-20 02:00:21.292623
+Updating KRX data...
+Updating between dates: 2026-10-12 / 2026-10-20
+FULL rescan codes:
+Total 24 items.
+[0-23] ['001630', '004540', '004960', '010690', '010770', '015020', '024900', '032820', '036540', '049080', '049180', '053030', '060900', '078860', '080720', '082210', '092040', '131180', '222080', '222420', '240600', '301300', '314930', '363260']
+PARTIAL rescan codes:
+Total 17 items.
+[0-16] ['001570', '289080', '092440', '190650', '357120', '060310', '018500', '365550', '033200', '099750', '001720', '021880', '002630', '338100', '357250', '067010', '020180']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-20 02:00:28.646683, no: 0, code 001630 in process
+2026-10-20 02:00:44.895982, no: 1, code 004540 in process
+2026-10-20 02:01:01.887481, no: 2, code 004960 in process
+2026-10-20 02:01:19.209820, no: 3, code 010690 in process
+2026-10-20 02:01:35.889183, no: 4, code 010770 in process
+2026-10-20 02:01:52.944904, no: 5, code 015020 in process
+2026-10-20 02:02:09.913902, no: 6, code 024900 in process
+2026-10-20 02:02:26.907737, no: 7, code 032820 in process
+2026-10-20 02:02:43.801384, no: 8, code 036540 in process
+2026-10-20 02:02:59.941837, no: 9, code 049080 in process
+2026-10-20 02:03:16.948873, no: 10, code 049180 in process
+2026-10-20 02:03:33.161006, no: 11, code 053030 in process
+2026-10-20 02:03:50.232443, no: 12, code 060900 in process
+2026-10-20 02:04:06.782342, no: 13, code 078860 in process
+2026-10-20 02:04:22.981298, no: 14, code 080720 in process
+2026-10-20 02:04:36.841078, no: 15, code 082210 in process
+2026-10-20 02:04:54.645872, no: 16, code 092040 in process
+2026-10-20 02:05:11.790832, no: 17, code 131180 in process
+2026-10-20 02:05:28.292568, no: 18, code 222080 in process
+2026-10-20 02:05:43.556750, no: 19, code 222420 in process
+2026-10-20 02:05:59.898828, no: 20, code 240600 in process
+2026-10-20 02:06:08.440577, no: 21, code 301300 in process
+2026-10-20 02:06:19.751805, no: 22, code 314930 in process
+2026-10-20 02:06:30.967878, no: 23, code 363260 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-20 02:06:51.828750, no: 0, code 001570 in process
+2026-10-20 02:06:59.596294, no: 1, code 289080 in process
+2026-10-20 02:07:07.807881, no: 2, code 092440 in process
+2026-10-20 02:07:15.556018, no: 3, code 190650 in process
+2026-10-20 02:07:23.134249, no: 4, code 357120 in process
+2026-10-20 02:07:29.137534, no: 5, code 060310 in process
+2026-10-20 02:07:36.968214, no: 6, code 018500 in process
+2026-10-20 02:07:44.229166, no: 7, code 365550 in process
+2026-10-20 02:07:50.224460, no: 8, code 033200 in process
+2026-10-20 02:07:57.438268, no: 9, code 099750 in process
+2026-10-20 02:08:04.722476, no: 10, code 001720 in process
+2026-10-20 02:08:12.015838, no: 11, code 021880 in process
+2026-10-20 02:08:19.340822, no: 12, code 002630 in process
+2026-10-20 02:08:26.958503, no: 13, code 338100 in process
+2026-10-20 02:08:32.929719, no: 14, code 357250 in process
+2026-10-20 02:08:39.129906, no: 15, code 067010 in process
+2026-10-20 02:08:46.799751, no: 16, code 020180 in process
+== Update finished ==
