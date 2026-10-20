@@ -1870,3 +1870,52 @@ Financial data collection log >>
 2026-10-20 02:08:39.129906, no: 15, code 067010 in process
 2026-10-20 02:08:46.799751, no: 16, code 020180 in process
 == Update finished ==
+Company health data collection initiated at 2026-10-21 02:00:21.929093
+Updating KRX data...
+Updating between dates: 2026-10-13 / 2026-10-21
+FULL rescan codes:
+Total 18 items.
+[0-17] ['004540', '004960', '010690', '010770', '013310', '015020', '032820', '036540', '049080', '049180', '053030', '054780', '078860', '079970', '131180', '175250', '222080', '240600']
+PARTIAL rescan codes:
+Total 17 items.
+[0-16] ['099750', '002630', '060310', '033200', '067010', '365550', '357120', '001570', '289080', '021880', '357250', '092440', '018500', '001720', '190650', '020180', '338100']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-21 02:00:28.773578, no: 0, code 004540 in process
+2026-10-21 02:00:44.770019, no: 1, code 004960 in process
+2026-10-21 02:01:01.711562, no: 2, code 010690 in process
+2026-10-21 02:01:18.358075, no: 3, code 010770 in process
+2026-10-21 02:01:34.209335, no: 4, code 013310 in process
+2026-10-21 02:01:50.085453, no: 5, code 015020 in process
+2026-10-21 02:02:05.696659, no: 6, code 032820 in process
+2026-10-21 02:02:22.163955, no: 7, code 036540 in process
+2026-10-21 02:02:38.168949, no: 8, code 049080 in process
+2026-10-21 02:02:54.437592, no: 9, code 049180 in process
+2026-10-21 02:03:10.656619, no: 10, code 053030 in process
+2026-10-21 02:03:26.999013, no: 11, code 054780 in process
+2026-10-21 02:03:43.321793, no: 12, code 078860 in process
+2026-10-21 02:03:58.998001, no: 13, code 079970 in process
+2026-10-21 02:04:19.777241, no: 14, code 131180 in process
+2026-10-21 02:04:35.627766, no: 15, code 175250 in process
+2026-10-21 02:04:49.650825, no: 16, code 222080 in process
+2026-10-21 02:05:04.602187, no: 17, code 240600 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-21 02:05:23.157577, no: 0, code 099750 in process
+2026-10-21 02:05:30.358496, no: 1, code 002630 in process
+2026-10-21 02:05:38.011793, no: 2, code 060310 in process
+2026-10-21 02:05:45.242764, no: 3, code 033200 in process
+2026-10-21 02:05:52.451355, no: 4, code 067010 in process
+2026-10-21 02:05:59.716529, no: 5, code 365550 in process
+2026-10-21 02:06:05.696650, no: 6, code 357120 in process
+2026-10-21 02:06:11.664786, no: 7, code 001570 in process
+2026-10-21 02:06:18.892683, no: 8, code 289080 in process
+2026-10-21 02:06:26.115287, no: 9, code 021880 in process
+2026-10-21 02:06:33.362983, no: 10, code 357250 in process
+2026-10-21 02:06:39.375001, no: 11, code 092440 in process
+2026-10-21 02:06:46.566271, no: 12, code 018500 in process
+2026-10-21 02:06:54.262394, no: 13, code 001720 in process
+2026-10-21 02:07:01.548731, no: 14, code 190650 in process
+2026-10-21 02:07:08.743629, no: 15, code 020180 in process
+2026-10-21 02:07:16.033819, no: 16, code 338100 in process
+== Update finished ==
