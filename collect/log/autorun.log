@@ -5573,3 +5573,129 @@ volume_db.feather
 
 sent 72,222,647 bytes  received 149 bytes  48,148,530.67 bytes/sec
 total size is 72,204,477  speedup is 1.00
+prices and volumes updates [initiating] 2026-10-22 02:00:06
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-10-22 02:00:21.099912
+Updating KRX data...
+Updating between dates: 2026-10-14 / 2026-10-22
+FULL rescan codes:
+Total 14 items.
+[0-13] ['004540', '004960', '010690', '013310', '015020', '032820', '049080', '053030', '054780', '071950', '079970', '131180', '175250', '240600']
+PARTIAL rescan codes:
+Total 17 items.
+[0-16] ['001720', '357120', '002630', '033200', '099750', '001570', '357250', '338100', '060310', '067010', '018500', '020180', '190650', '092440', '289080', '365550', '021880']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-22 02:00:27.972214, no: 0, code 004540 in process
+2026-10-22 02:00:43.682662, no: 1, code 004960 in process
+2026-10-22 02:00:59.549056, no: 2, code 010690 in process
+2026-10-22 02:01:15.373868, no: 3, code 013310 in process
+2026-10-22 02:01:30.997781, no: 4, code 015020 in process
+2026-10-22 02:01:46.470473, no: 5, code 032820 in process
+2026-10-22 02:02:02.035958, no: 6, code 049080 in process
+2026-10-22 02:02:17.871457, no: 7, code 053030 in process
+2026-10-22 02:02:33.648426, no: 8, code 054780 in process
+2026-10-22 02:02:49.219867, no: 9, code 071950 in process
+2026-10-22 02:03:04.938340, no: 10, code 079970 in process
+2026-10-22 02:03:20.685012, no: 11, code 131180 in process
+2026-10-22 02:03:36.728877, no: 12, code 175250 in process
+2026-10-22 02:03:50.142287, no: 13, code 240600 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-22 02:04:08.708235, no: 0, code 001720 in process
+2026-10-22 02:04:16.073908, no: 1, code 357120 in process
+2026-10-22 02:04:22.032715, no: 2, code 002630 in process
+2026-10-22 02:04:29.183790, no: 3, code 033200 in process
+2026-10-22 02:04:36.405160, no: 4, code 099750 in process
+2026-10-22 02:04:43.650467, no: 5, code 001570 in process
+2026-10-22 02:04:50.854632, no: 6, code 357250 in process
+2026-10-22 02:04:56.868881, no: 7, code 338100 in process
+2026-10-22 02:05:02.817192, no: 8, code 060310 in process
+2026-10-22 02:05:10.220793, no: 9, code 067010 in process
+2026-10-22 02:05:17.413737, no: 10, code 018500 in process
+2026-10-22 02:05:24.648845, no: 11, code 020180 in process
+2026-10-22 02:05:31.758991, no: 12, code 190650 in process
+2026-10-22 02:05:38.876759, no: 13, code 092440 in process
+2026-10-22 02:05:46.071653, no: 14, code 289080 in process
+2026-10-22 02:05:53.235830, no: 15, code 365550 in process
+2026-10-22 02:05:59.217277, no: 16, code 021880 in process
+== Update finished ==
+001570 | 1/31
+001720 | 2/31
+002630 | 3/31
+004540 | 4/31
+004960 | 5/31
+010690 | 6/31
+013310 | 7/31
+015020 | 8/31
+018500 | 9/31
+020180 | 10/31
+021880 | 11/31
+032820 | 12/31
+033200 | 13/31
+049080 | 14/31
+053030 | 15/31
+054780 | 16/31
+060310 | 17/31
+067010 | 18/31
+071950 | 19/31
+079970 | 20/31
+092440 | 21/31
+099750 | 22/31
+131180 | 23/31
+175250 | 24/31
+190650 | 25/31
+240600 | 26/31
+289080 | 27/31
+338100 | 28/31
+357120 | 29/31
+357250 | 30/31
+365550 | 31/31
+sending incremental file list
+001570.png
+001720.png
+002630.png
+004540.png
+004960.png
+010690.png
+013310.png
+015020.png
+018500.png
+020180.png
+021880.png
+032820.png
+033200.png
+049080.png
+053030.png
+054780.png
+060310.png
+067010.png
+071950.png
+079970.png
+092440.png
+099750.png
+131180.png
+175250.png
+190650.png
+240600.png
+289080.png
+338100.png
+357120.png
+357250.png
+365550.png
+df_krx.db
+update_info.txt
+
+sent 12,446,055 bytes  received 643 bytes  24,893,396.00 bytes/sec
+total size is 646,427,314  speedup is 51.94
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+kosdaq.feather
+kospi.feather
+kospi200.feather
+price_db.feather
+volume_db.feather
+
+sent 72,250,977 bytes  received 149 bytes  48,167,417.33 bytes/sec
+total size is 72,232,808  speedup is 1.00
