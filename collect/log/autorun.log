@@ -6281,3 +6281,117 @@ volume_db.feather
 
 sent 72,313,844 bytes  received 149 bytes  48,209,328.67 bytes/sec
 total size is 72,295,657  speedup is 1.00
+prices and volumes updates [initiating] 2026-10-28 02:00:14
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-10-28 02:00:28.805152
+Updating KRX data...
+Updating between dates: 2026-10-20 / 2026-10-28
+FULL rescan codes:
+Total 13 items.
+[0-12] ['007690', '0099X0', '013310', '054780', '067390', '071950', '079970', '094860', '175250', '185750', '199800', '303030', '351320']
+PARTIAL rescan codes:
+Total 14 items.
+[0-13] ['289080', '092440', '002630', '190650', '001570', '432320', '099750', '001720', '020180', '060310', '067010', '021880', '018500', '033200']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-28 02:00:35.352825, no: 0, code 007690 in process
+2026-10-28 02:00:58.230066, no: 1, code 0099X0 in process
+2026-10-28 02:01:04.632878, no: 2, code 013310 in process
+2026-10-28 02:01:21.636609, no: 3, code 054780 in process
+2026-10-28 02:01:38.444454, no: 4, code 067390 in process
+2026-10-28 02:01:54.425139, no: 5, code 071950 in process
+2026-10-28 02:02:10.324475, no: 6, code 079970 in process
+2026-10-28 02:02:27.447072, no: 7, code 094860 in process
+2026-10-28 02:02:43.546220, no: 8, code 175250 in process
+2026-10-28 02:02:57.736145, no: 9, code 185750 in process
+2026-10-28 02:03:14.188521, no: 10, code 199800 in process
+2026-10-28 02:03:24.740059, no: 11, code 303030 in process
+2026-10-28 02:03:37.159275, no: 12, code 351320 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-28 02:03:57.964819, no: 0, code 289080 in process
+2026-10-28 02:04:05.196382, no: 1, code 092440 in process
+2026-10-28 02:04:17.439486, no: 2, code 002630 in process
+2026-10-28 02:04:24.637546, no: 3, code 190650 in process
+2026-10-28 02:04:31.804548, no: 4, code 001570 in process
+2026-10-28 02:04:39.237877, no: 5, code 432320 in process
+2026-10-28 02:04:45.517180, no: 6, code 099750 in process
+2026-10-28 02:04:52.764757, no: 7, code 001720 in process
+2026-10-28 02:05:00.115661, no: 8, code 020180 in process
+2026-10-28 02:05:07.904834, no: 9, code 060310 in process
+2026-10-28 02:05:15.399607, no: 10, code 067010 in process
+2026-10-28 02:05:22.592304, no: 11, code 021880 in process
+2026-10-28 02:05:30.037076, no: 12, code 018500 in process
+2026-10-28 02:05:37.341417, no: 13, code 033200 in process
+== Update finished ==
+001570 | 1/27
+001720 | 2/27
+002630 | 3/27
+007690 | 4/27
+0099X0 | 5/27
+013310 | 6/27
+018500 | 7/27
+020180 | 8/27
+021880 | 9/27
+033200 | 10/27
+054780 | 11/27
+060310 | 12/27
+067010 | 13/27
+067390 | 14/27
+071950 | 15/27
+079970 | 16/27
+092440 | 17/27
+094860 | 18/27
+099750 | 19/27
+175250 | 20/27
+185750 | 21/27
+190650 | 22/27
+199800 | 23/27
+289080 | 24/27
+303030 | 25/27
+351320 | 26/27
+432320 | 27/27
+sending incremental file list
+001570.png
+001720.png
+002630.png
+007690.png
+0099X0.png
+013310.png
+018500.png
+020180.png
+021880.png
+033200.png
+054780.png
+060310.png
+067010.png
+067390.png
+071950.png
+079970.png
+092440.png
+094860.png
+099750.png
+175250.png
+185750.png
+190650.png
+199800.png
+289080.png
+303030.png
+351320.png
+432320.png
+df_krx.db
+update_info.txt
+
+sent 11,200,202 bytes  received 567 bytes  22,401,538.00 bytes/sec
+total size is 647,393,207  speedup is 57.80
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+kosdaq.feather
+kospi.feather
+kospi200.feather
+price_db.feather
+volume_db.feather
+
+sent 72,330,252 bytes  received 149 bytes  48,220,267.33 bytes/sec
+total size is 72,312,060  speedup is 1.00
