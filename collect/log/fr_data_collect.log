@@ -2214,3 +2214,44 @@ Financial data collection log >>
 2026-10-28 02:05:30.037076, no: 12, code 018500 in process
 2026-10-28 02:05:37.341417, no: 13, code 033200 in process
 == Update finished ==
+Company health data collection initiated at 2026-10-29 02:00:26.661301
+Updating KRX data...
+Updating between dates: 2026-10-21 / 2026-10-29
+FULL rescan codes:
+Total 9 items.
+[0-8] ['007690', '0099X0', '067390', '071950', '094860', '185750', '199800', '303030', '351320']
+PARTIAL rescan codes:
+Total 16 items.
+[0-15] ['289080', '190650', '020180', '018500', '060310', '021880', '001720', '900290', '033200', '900120', '067010', '092440', '099750', '432320', '002630', '001570']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-29 02:00:33.309272, no: 0, code 007690 in process
+2026-10-29 02:00:50.198588, no: 1, code 0099X0 in process
+2026-10-29 02:00:56.594831, no: 2, code 067390 in process
+2026-10-29 02:01:12.766973, no: 3, code 071950 in process
+2026-10-29 02:01:29.279918, no: 4, code 094860 in process
+2026-10-29 02:01:46.056000, no: 5, code 185750 in process
+2026-10-29 02:02:01.866510, no: 6, code 199800 in process
+2026-10-29 02:02:12.600399, no: 7, code 303030 in process
+2026-10-29 02:02:25.517169, no: 8, code 351320 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-10-29 02:02:48.616822, no: 0, code 289080 in process
+2026-10-29 02:02:55.875483, no: 1, code 190650 in process
+2026-10-29 02:03:03.398827, no: 2, code 020180 in process
+2026-10-29 02:03:10.648154, no: 3, code 018500 in process
+2026-10-29 02:03:17.871596, no: 4, code 060310 in process
+2026-10-29 02:03:25.107782, no: 5, code 021880 in process
+2026-10-29 02:03:32.445088, no: 6, code 001720 in process
+2026-10-29 02:03:39.757828, no: 7, code 900290 in process
+----> no: 7, code 900290 currency not in KRW, skipping
+2026-10-29 02:03:44.958594, no: 8, code 033200 in process
+2026-10-29 02:03:52.216814, no: 9, code 900120 in process
+----> no: 9, code 900120 currency not in KRW, skipping
+2026-10-29 02:03:57.417831, no: 10, code 067010 in process
+2026-10-29 02:04:04.594844, no: 11, code 092440 in process
+2026-10-29 02:04:11.924776, no: 12, code 099750 in process
+2026-10-29 02:04:19.228550, no: 13, code 432320 in process
+2026-10-29 02:04:25.210057, no: 14, code 002630 in process
+2026-10-29 02:04:32.386839, no: 15, code 001570 in process
+== Update finished ==
