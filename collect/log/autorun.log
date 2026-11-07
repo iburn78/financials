@@ -7663,3 +7663,94 @@ volume_db.feather
 
 sent 72,444,653 bytes  received 149 bytes  48,296,534.67 bytes/sec
 total size is 72,426,434  speedup is 1.00
+prices and volumes updates [initiating] 2026-11-08 02:00:05
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-11-08 02:00:18.820493
+Updating KRX data...
+Updating between dates: 2026-10-31 / 2026-11-08
+FULL rescan codes:
+Total 6 items.
+[0-5] ['005850', '032750', '089140', '186230', '224060', '900310']
+PARTIAL rescan codes:
+Total 13 items.
+[0-12] ['060310', '289080', '002630', '001570', '020180', '033200', '001720', '021880', '099750', '092440', '018500', '190650', '067010']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-08 02:00:25.453288, no: 0, code 005850 in process
+2026-11-08 02:00:41.216865, no: 1, code 032750 in process
+2026-11-08 02:00:57.325365, no: 2, code 089140 in process
+2026-11-08 02:01:13.080085, no: 3, code 186230 in process
+2026-11-08 02:01:25.317421, no: 4, code 224060 in process
+2026-11-08 02:01:41.125349, no: 5, code 900310 in process
+----> no: 5, code 900310 currency not in KRW, skipping
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-08 02:01:56.718220, no: 0, code 060310 in process
+2026-11-08 02:02:03.914507, no: 1, code 289080 in process
+2026-11-08 02:02:11.293431, no: 2, code 002630 in process
+2026-11-08 02:02:18.517734, no: 3, code 001570 in process
+2026-11-08 02:02:25.735868, no: 4, code 020180 in process
+2026-11-08 02:02:32.949097, no: 5, code 033200 in process
+2026-11-08 02:02:40.159091, no: 6, code 001720 in process
+2026-11-08 02:02:47.417615, no: 7, code 021880 in process
+2026-11-08 02:02:54.686928, no: 8, code 099750 in process
+2026-11-08 02:03:01.834456, no: 9, code 092440 in process
+2026-11-08 02:03:09.004832, no: 10, code 018500 in process
+2026-11-08 02:03:16.274594, no: 11, code 190650 in process
+2026-11-08 02:03:23.443098, no: 12, code 067010 in process
+== Update finished ==
+001570 | 1/19
+001720 | 2/19
+002630 | 3/19
+005850 | 4/19
+018500 | 5/19
+020180 | 6/19
+021880 | 7/19
+032750 | 8/19
+033200 | 9/19
+060310 | 10/19
+067010 | 11/19
+089140 | 12/19
+092440 | 13/19
+099750 | 14/19
+186230 | 15/19
+190650 | 16/19
+224060 | 17/19
+289080 | 18/19
+900310 | 19/19
+2026-11-08 02:06:06.546984 | 900310 | quarterly data of 900310 is empty.
+sending incremental file list
+001570.png
+001720.png
+002630.png
+005850.png
+018500.png
+020180.png
+021880.png
+032750.png
+033200.png
+060310.png
+067010.png
+089140.png
+092440.png
+099750.png
+186230.png
+190650.png
+224060.png
+289080.png
+df_krx.db
+update_info.txt
+
+sent 7,763,627 bytes  received 398 bytes  15,528,050.00 bytes/sec
+total size is 653,184,837  speedup is 84.13
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+kosdaq.feather
+kospi.feather
+kospi200.feather
+price_db.feather
+volume_db.feather
+
+sent 72,444,682 bytes  received 149 bytes  48,296,554.00 bytes/sec
+total size is 72,426,464  speedup is 1.00
