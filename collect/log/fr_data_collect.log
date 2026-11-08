@@ -2722,3 +2722,37 @@ Financial data collection log >>
 2026-11-08 02:03:16.274594, no: 11, code 190650 in process
 2026-11-08 02:03:23.443098, no: 12, code 067010 in process
 == Update finished ==
+Company health data collection initiated at 2026-11-09 02:00:17.612730
+Updating KRX data...
+Updating between dates: 2026-11-01 / 2026-11-09
+FULL rescan codes:
+Total 6 items.
+[0-5] ['005850', '032750', '089140', '186230', '224060', '900310']
+PARTIAL rescan codes:
+Total 13 items.
+[0-12] ['021880', '001570', '020180', '067010', '289080', '018500', '060310', '002630', '099750', '033200', '001720', '092440', '190650']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-09 02:00:24.267416, no: 0, code 005850 in process
+2026-11-09 02:00:40.027437, no: 1, code 032750 in process
+2026-11-09 02:00:55.760731, no: 2, code 089140 in process
+2026-11-09 02:01:11.494298, no: 3, code 186230 in process
+2026-11-09 02:01:23.832618, no: 4, code 224060 in process
+2026-11-09 02:01:40.242065, no: 5, code 900310 in process
+----> no: 5, code 900310 currency not in KRW, skipping
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-09 02:01:55.295733, no: 0, code 021880 in process
+2026-11-09 02:02:02.574673, no: 1, code 001570 in process
+2026-11-09 02:02:09.784790, no: 2, code 020180 in process
+2026-11-09 02:02:16.961353, no: 3, code 067010 in process
+2026-11-09 02:02:24.257480, no: 4, code 289080 in process
+2026-11-09 02:02:31.498868, no: 5, code 018500 in process
+2026-11-09 02:02:38.654811, no: 6, code 060310 in process
+2026-11-09 02:02:45.881866, no: 7, code 002630 in process
+2026-11-09 02:02:53.083273, no: 8, code 099750 in process
+2026-11-09 02:03:00.322320, no: 9, code 033200 in process
+2026-11-09 02:03:07.526523, no: 10, code 001720 in process
+2026-11-09 02:03:14.834603, no: 11, code 092440 in process
+2026-11-09 02:03:22.467848, no: 12, code 190650 in process
+== Update finished ==
