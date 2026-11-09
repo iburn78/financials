@@ -7845,3 +7845,133 @@ volume_db.feather
 
 sent 72,444,683 bytes  received 149 bytes  48,296,554.67 bytes/sec
 total size is 72,426,464  speedup is 1.00
+prices and volumes updates [initiating] 2026-11-10 02:00:05
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-11-10 02:00:20.367207
+Updating KRX data...
+Updating between dates: 2026-11-02 / 2026-11-10
+FULL rescan codes:
+Total 7 items.
+[0-6] ['005850', '032750', '089140', '136490', '186230', '224060', '900310']
+PARTIAL rescan codes:
+Total 25 items.
+[0-24] ['002630', '099750', '309930', '048770', '300080', '001570', '001720', '277880', '440110', '060310', '033200', '018500', '005670', '289080', '006340', '021880', '024070', '104540', '190650', '0096B0', '498390', '067010', '020180', '092440', '332570']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-10 02:00:27.399966, no: 0, code 005850 in process
+2026-11-10 02:00:43.842867, no: 1, code 032750 in process
+2026-11-10 02:01:00.197440, no: 2, code 089140 in process
+2026-11-10 02:01:16.263928, no: 3, code 136490 in process
+2026-11-10 02:01:32.531444, no: 4, code 186230 in process
+2026-11-10 02:01:44.836560, no: 5, code 224060 in process
+2026-11-10 02:02:00.784979, no: 6, code 900310 in process
+----> no: 6, code 900310 currency not in KRW, skipping
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-10 02:02:16.226161, no: 0, code 002630 in process
+2026-11-10 02:02:23.595695, no: 1, code 099750 in process
+2026-11-10 02:02:30.834771, no: 2, code 309930 in process
+2026-11-10 02:02:37.826047, no: 3, code 048770 in process
+2026-11-10 02:02:44.839307, no: 4, code 300080 in process
+2026-11-10 02:02:51.835445, no: 5, code 001570 in process
+2026-11-10 02:02:59.184594, no: 6, code 001720 in process
+2026-11-10 02:03:06.393633, no: 7, code 277880 in process
+2026-11-10 02:03:13.510880, no: 8, code 440110 in process
+2026-11-10 02:03:20.499842, no: 9, code 060310 in process
+2026-11-10 02:03:27.805006, no: 10, code 033200 in process
+2026-11-10 02:03:35.092030, no: 11, code 018500 in process
+2026-11-10 02:03:42.350664, no: 12, code 005670 in process
+2026-11-10 02:03:49.318569, no: 13, code 289080 in process
+2026-11-10 02:03:56.558472, no: 14, code 006340 in process
+2026-11-10 02:04:03.550751, no: 15, code 021880 in process
+2026-11-10 02:04:10.806282, no: 16, code 024070 in process
+2026-11-10 02:04:17.788400, no: 17, code 104540 in process
+2026-11-10 02:04:24.827923, no: 18, code 190650 in process
+2026-11-10 02:04:32.029388, no: 19, code 0096B0 in process
+2026-11-10 02:04:38.448446, no: 20, code 498390 in process
+2026-11-10 02:04:45.403819, no: 21, code 067010 in process
+2026-11-10 02:04:52.564219, no: 22, code 020180 in process
+2026-11-10 02:04:59.748884, no: 23, code 092440 in process
+2026-11-10 02:05:07.092478, no: 24, code 332570 in process
+== Update finished ==
+001570 | 1/32
+001720 | 2/32
+002630 | 3/32
+005670 | 4/32
+005850 | 5/32
+006340 | 6/32
+0096B0 | 7/32
+018500 | 8/32
+020180 | 9/32
+021880 | 10/32
+024070 | 11/32
+032750 | 12/32
+033200 | 13/32
+048770 | 14/32
+060310 | 15/32
+067010 | 16/32
+089140 | 17/32
+092440 | 18/32
+099750 | 19/32
+104540 | 20/32
+136490 | 21/32
+186230 | 22/32
+190650 | 23/32
+224060 | 24/32
+277880 | 25/32
+289080 | 26/32
+300080 | 27/32
+309930 | 28/32
+332570 | 29/32
+440110 | 30/32
+498390 | 31/32
+900310 | 32/32
+2026-11-10 02:09:26.785832 | 900310 | quarterly data of 900310 is empty.
+sending incremental file list
+001570.png
+001720.png
+002630.png
+005670.png
+005850.png
+006340.png
+0096B0.png
+018500.png
+020180.png
+021880.png
+024070.png
+032750.png
+033200.png
+048770.png
+060310.png
+067010.png
+089140.png
+092440.png
+099750.png
+104540.png
+136490.png
+186230.png
+190650.png
+224060.png
+277880.png
+289080.png
+300080.png
+309930.png
+332570.png
+440110.png
+498390.png
+df_krx.db
+update_info.txt
+
+sent 12,914,637 bytes  received 643 bytes  25,830,560.00 bytes/sec
+total size is 655,937,233  speedup is 50.79
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+kosdaq.feather
+kospi.feather
+kospi200.feather
+price_db.feather
+volume_db.feather
+
+sent 72,469,944 bytes  received 149 bytes  48,313,395.33 bytes/sec
+total size is 72,451,719  speedup is 1.00
