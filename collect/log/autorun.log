@@ -11882,3 +11882,174 @@ volume_db.feather
 
 sent 72,704,817 bytes  received 149 bytes  48,469,977.33 bytes/sec
 total size is 72,686,537  speedup is 1.00
+prices and volumes updates [initiating] 2026-11-16 02:00:06
+prices and volumes updates [completed]
+Company health data collection initiated at 2026-11-16 02:00:19.092675
+Updating KRX data...
+Updating between dates: 2026-11-08 / 2026-11-16
+FULL rescan codes:
+Total 23 items.
+[0-22] ['0015M0', '008730', '009190', '009830', '032580', '033790', '053280', '060260', '060370', '060590', '061040', '094860', '101670', '136490', '170920', '182400', '198080', '204840', '291230', '318010', '348350', '376980', '490470']
+PARTIAL rescan codes:
+Total 21 items.
+[0-20] ['289080', '190650', '021880', '950160', '404990', '950140', '002630', '001720', '950200', '033200', '060310', '950220', '092440', '020180', '099750', '241560', '950190', '001570', '067010', '018500', '0030R0']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-16 02:00:28.875333, no: 0, code 0015M0 in process
+2026-11-16 02:00:34.587830, no: 1, code 008730 in process
+2026-11-16 02:00:50.649048, no: 2, code 009190 in process
+2026-11-16 02:01:06.990560, no: 3, code 009830 in process
+2026-11-16 02:01:23.304468, no: 4, code 032580 in process
+2026-11-16 02:01:39.269420, no: 5, code 033790 in process
+2026-11-16 02:01:55.490168, no: 6, code 053280 in process
+2026-11-16 02:02:11.709575, no: 7, code 060260 in process
+2026-11-16 02:02:27.740568, no: 8, code 060370 in process
+2026-11-16 02:02:44.045142, no: 9, code 060590 in process
+2026-11-16 02:03:00.116898, no: 10, code 061040 in process
+2026-11-16 02:03:16.408442, no: 11, code 094860 in process
+2026-11-16 02:03:32.438827, no: 12, code 101670 in process
+2026-11-16 02:03:48.457690, no: 13, code 136490 in process
+2026-11-16 02:04:04.748866, no: 14, code 170920 in process
+2026-11-16 02:04:20.928515, no: 15, code 182400 in process
+2026-11-16 02:04:37.273233, no: 16, code 198080 in process
+2026-11-16 02:04:49.477867, no: 17, code 204840 in process
+2026-11-16 02:05:04.750831, no: 18, code 291230 in process
+2026-11-16 02:05:15.881794, no: 19, code 318010 in process
+2026-11-16 02:05:28.120506, no: 20, code 348350 in process
+2026-11-16 02:05:39.659229, no: 21, code 376980 in process
+2026-11-16 02:05:50.235173, no: 22, code 490470 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-16 02:06:06.464261, no: 0, code 289080 in process
+2026-11-16 02:06:13.663827, no: 1, code 190650 in process
+2026-11-16 02:06:22.540883, no: 2, code 021880 in process
+2026-11-16 02:06:29.710595, no: 3, code 950160 in process
+----> no: 3, code 950160 currency not in KRW, skipping
+2026-11-16 02:06:34.900292, no: 4, code 404990 in process
+2026-11-16 02:06:40.936789, no: 5, code 950140 in process
+----> no: 5, code 950140 currency not in KRW, skipping
+2026-11-16 02:06:46.117041, no: 6, code 002630 in process
+2026-11-16 02:06:53.426255, no: 7, code 001720 in process
+2026-11-16 02:07:00.614867, no: 8, code 950200 in process
+----> no: 8, code 950200 currency not in KRW, skipping
+2026-11-16 02:07:05.806969, no: 9, code 033200 in process
+2026-11-16 02:07:12.932940, no: 10, code 060310 in process
+2026-11-16 02:07:20.111333, no: 11, code 950220 in process
+----> no: 11, code 950220 currency not in KRW, skipping
+2026-11-16 02:07:25.303732, no: 12, code 092440 in process
+2026-11-16 02:07:32.383446, no: 13, code 020180 in process
+2026-11-16 02:07:39.618394, no: 14, code 099750 in process
+2026-11-16 02:07:46.899459, no: 15, code 241560 in process
+----> no: 15, code 241560 currency not in KRW, skipping
+2026-11-16 02:07:52.086893, no: 16, code 950190 in process
+----> no: 16, code 950190 currency not in KRW, skipping
+2026-11-16 02:07:57.277025, no: 17, code 001570 in process
+2026-11-16 02:08:04.621625, no: 18, code 067010 in process
+2026-11-16 02:08:11.871455, no: 19, code 018500 in process
+2026-11-16 02:08:19.107334, no: 20, code 0030R0 in process
+== Update finished ==
+001570 | 1/44
+0015M0 | 2/44
+001720 | 3/44
+002630 | 4/44
+0030R0 | 5/44
+2026-11-16 02:09:24.296764 | 0030R0 | quarterly data of 0030R0 is empty.
+008730 | 6/44
+009190 | 7/44
+009830 | 8/44
+018500 | 9/44
+020180 | 10/44
+021880 | 11/44
+032580 | 12/44
+033200 | 13/44
+033790 | 14/44
+053280 | 15/44
+060260 | 16/44
+060310 | 17/44
+060370 | 18/44
+060590 | 19/44
+061040 | 20/44
+067010 | 21/44
+092440 | 22/44
+094860 | 23/44
+099750 | 24/44
+101670 | 25/44
+136490 | 26/44
+170920 | 27/44
+182400 | 28/44
+190650 | 29/44
+198080 | 30/44
+204840 | 31/44
+241560 | 32/44
+289080 | 33/44
+291230 | 34/44
+318010 | 35/44
+348350 | 36/44
+376980 | 37/44
+404990 | 38/44
+490470 | 39/44
+950140 | 40/44
+2026-11-16 02:13:23.564598 | 950140 | quarterly data of 950140 is empty.
+950160 | 41/44
+2026-11-16 02:13:25.033082 | 950160 | quarterly data of 950160 is empty.
+950190 | 42/44
+2026-11-16 02:13:26.501508 | 950190 | quarterly data of 950190 is empty.
+950200 | 43/44
+2026-11-16 02:13:27.965124 | 950200 | quarterly data of 950200 is empty.
+950220 | 44/44
+2026-11-16 02:13:29.421313 | 950220 | quarterly data of 950220 is empty.
+sending incremental file list
+001570.png
+0015M0.png
+001720.png
+002630.png
+008730.png
+009190.png
+009830.png
+018500.png
+020180.png
+021880.png
+032580.png
+033200.png
+033790.png
+053280.png
+060260.png
+060310.png
+060370.png
+060590.png
+061040.png
+067010.png
+092440.png
+094860.png
+099750.png
+101670.png
+136490.png
+170920.png
+182400.png
+190650.png
+198080.png
+204840.png
+241560.png
+289080.png
+291230.png
+318010.png
+348350.png
+376980.png
+404990.png
+490470.png
+df_krx.db
+update_info.txt
+
+sent 15,132,806 bytes  received 776 bytes  30,267,164.00 bytes/sec
+total size is 877,060,324  speedup is 57.95
+sending incremental file list
+df_krx.feather
+financial_reports_main.parquet
+kosdaq.feather
+kospi.feather
+kospi200.feather
+price_db.feather
+volume_db.feather
+
+sent 72,704,821 bytes  received 149 bytes  48,469,980.00 bytes/sec
+total size is 72,686,538  speedup is 1.00
