@@ -308,7 +308,7 @@ def merge_update(A, F=None, P=None, index_cols=['code', 'fs_div', 'account_nm'])
     return A
 
 
-def fetch_code(symbol, start, end):
+def fetch_code(symbol, start, end=None):
     start = pd.to_datetime(start) if start else datetime.datetime(1980, 1, 1)
     end = pd.to_datetime(end) if end else datetime.datetime.today()
     url = 'https://fchart.stock.naver.com/sise.nhn?timeframe=day&count=6000&requestType=0&symbol='
