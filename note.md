@@ -129,6 +129,9 @@
     * copy it into venv/.../matplotlib... 
     * modify (maynot be needed, if the font is installed in the system...) json file to add 'Malgun Gothic'
 
+
+- fdr: no longer used in major ways (still existing in codes) - replaced with other
+
 - fdr: prices are adjusted prices... (refer to the online manual Q&A section)
 
 - fdr: Modify listing.py and data.py to include date_req parameter

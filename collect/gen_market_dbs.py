@@ -1,24 +1,25 @@
 #%%
 import pandas as pd
+from pathlib import Path
 import FinanceDataReader as fdr
 from datetime import datetime
-
 from concurrent.futures import ThreadPoolExecutor
 from functools import partial
+from financials.tools.dc_tools import pvi_paths, fetch_loop, fetch_code
 
-from financials.tools.dc_tools import pvi_paths
-
-END_DATE_fdr = (pd.Timestamp.today().normalize()-pd.Timedelta(days=1)).date()
-
+DF_KRX_PATH = Path(__file__).parent.parent / 'collect/data/df_krx.feather'
+df_krx = pd.read_feather(DF_KRX_PATH)
+END_DATE = (pd.Timestamp.today().normalize()-pd.Timedelta(days=1)).date()
+#%% 
 def _fetch(code, START_DATE):
     try:
-        fdr_data = fdr.DataReader(code, START_DATE, END_DATE_fdr)
-        return code, fdr_data[['Close', 'Volume']]
+        data = fetch_code(code, START_DATE, END_DATE)
+        return code, data[['Close', 'Volume']]
     except Exception as e:
         return code, e
 
 # this is only available through CACHE from 2026-03-08
-def _get_close(date_req = END_DATE_fdr):
+def _get_close(date_req = END_DATE):
     date_req = date_req.strftime('%Y%m%d')
     # Quick Fix (FDR Error): -------------------------
     if date_req == '20260608': date_req = '20260605'
@@ -66,7 +67,7 @@ def _update_DB(DB, snapshot, date, column):
 
 def gen_market_DB(paths, START_DATE):
     market_dates = fdr.DataReader('005930', START_DATE).index
-    market_dates = market_dates[market_dates <= pd.Timestamp(END_DATE_fdr)]
+    market_dates = market_dates[market_dates <= pd.Timestamp(END_DATE)]
     prev_close = _get_close()
 
     [price_db_path, volume_db_path, kospi_path, kosdaq_path, kospi200_path] = paths

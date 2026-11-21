@@ -3,7 +3,6 @@ from financials.tools.dictionary import KRW_UNIT
 from math import log10
 import seaborn as sns
 import matplotlib.pyplot as plt
-import FinanceDataReader as fdr
 import pandas as pd
 import numpy as np
 import sqlite3
@@ -11,6 +10,10 @@ import platform
 import datetime
 import os
 import io
+import requests
+import re
+from io import StringIO
+from concurrent.futures import ThreadPoolExecutor
 
 pd_ = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # ..
 os.makedirs(os.path.join(pd_, 'collect/data'), exist_ok=True)
@@ -304,22 +307,108 @@ def merge_update(A, F=None, P=None, index_cols=['code', 'fs_div', 'account_nm'])
 
     return A
 
+
+def fetch_code(symbol, start, end):
+    start = pd.to_datetime(start) if start else datetime.datetime(1980, 1, 1)
+    end = pd.to_datetime(end) if end else datetime.datetime.today()
+    url = 'https://fchart.stock.naver.com/sise.nhn?timeframe=day&count=6000&requestType=0&symbol='
+    r = requests.get(url + symbol)
+
+    data_list = re.findall(r'<item data=\"(.*?)\" />', r.text, re.DOTALL)
+    if len(data_list) == 0:
+        print(f'"{symbol}" invalid symbol or has no data')
+        return pd.DataFrame()
+    data = '\n'.join(data_list)
+    df = pd.read_csv(StringIO(data), delimiter='|', header=None, dtype={0:str})
+    df.columns  = ['Date', 'Open', 'High', 'Low', 'Close', 'Volume']
+    df['Date'] = pd.to_datetime(df['Date'], format='%Y%m%d')
+    df.set_index('Date', inplace=True)
+    df.sort_index(inplace=True)
+    df['Change'] = df['Close'].pct_change()
+    return df.loc[start:end]
+
+
+def fetch_loop(init_page_size=100, max_workers=8):
+    BASE_URL = "https://m.stock.naver.com/api/stocks/marketValue/{market}?page={page}&pageSize={pageSize}"
+    rows = {}
+
+    with requests.Session() as session:
+        for market in ['KOSPI', 'KOSDAQ']:
+            page_size = init_page_size
+            seen_codes = set()
+            stock_rows = {}
+
+            while page_size >= 20:
+                def fetch_page(page):
+                    response = session.get(BASE_URL.format(
+                        market=market, page=page, pageSize=page_size
+                    ))
+                    response.raise_for_status()
+                    return response.json()
+
+                first_data = fetch_page(1)
+                total_stocks = first_data.get('totalCount', 0)
+                total_pages = (total_stocks + page_size - 1) // page_size
+
+                with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                    futures = executor.map(fetch_page, range(2, total_pages + 1))
+
+                    pages = [first_data]
+                    pages.extend(futures)
+
+                for data in pages:
+                    for item in data.get('stocks', []):
+                        code = item.get('itemCode')
+                        if not code:
+                            continue
+
+                        seen_codes.add(code)
+
+                        if item.get('stockEndType') != 'stock' or code in stock_rows:
+                            continue
+
+                        close = pd.to_numeric(item.get('closePriceRaw'), errors='coerce')
+                        marcap = pd.to_numeric(item.get('marketValueRaw'), errors='coerce')
+
+                        stock_rows[code] = {
+                            'Name': item['stockName'],
+                            'Market': market,
+                            'Close': close,
+                            'Volume': item.get('accumulatedTradingVolumeRaw'),
+                            'Amount': item.get('accumulatedTradingValueRaw'),
+                            'Marcap': marcap,
+                            'Stocks': marcap / close if pd.notna(close) and close else 0,
+                        }
+
+                missing = total_stocks - len(seen_codes)
+                # print(f'{market}: {len(seen_codes)}/{total_stocks} (page_size={page_size})')
+
+                if missing <= 0:
+                    break
+
+                page_size -= 10
+
+            if missing > 0:
+                raise ValueError(f'{market}: {missing} items missing.')
+
+            rows.update(stock_rows)
+
+    columns = ['Name', 'Market', 'Close', 'Volume', 'Amount', 'Marcap', 'Stocks']
+    df = pd.DataFrame.from_dict(rows, orient='index')
+    df.index.name = 'Code'
+
+    df[columns[2:]] = (
+        df[columns[2:]]
+        .apply(pd.to_numeric, errors='coerce')
+        .fillna(0)
+        .astype('int64')
+    )
+
+    return df
+
 def generate_krx_data(sql_db_creation=True): 
+    df_krx = fetch_loop()
     pd_ = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # .. 
-    prev_day = (pd.Timestamp.today().normalize()-pd.Timedelta(days=1)).date().strftime("%Y%m%d")
-    try:
-        df_krx = fdr.StockListing('KRX')
-        checker = df_krx.set_index('Code').loc['005930', 'Close']
-        if isinstance(checker, str) or checker is None:
-            df_krx = fdr.StockListing('KRX', date_req=prev_day)
-    except:
-        df_krx = fdr.StockListing('KRX', date_req=prev_day)
-
-    df_krx.drop(columns=['ChangeCode', 'Changes', 'ChagesRatio'], inplace=True)
-    df_krx = df_krx.set_index('Code')
-    df_krx = df_krx[df_krx['MarketId'] != 'KNX']
-
-    # df_krx=df_krx[~df_krx['Dept'].str.contains('관리')]   # remove companies in trouble
     df_krx.to_feather(os.path.join(pd_, 'collect/data/df_krx.feather'))
 
     # this db is used in TNP project for code search in node
@@ -338,6 +427,7 @@ def generate_krx_data(sql_db_creation=True):
             f.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
     return df_krx
+
 
 def log_print(log_file, message):
     print(message)
@@ -377,20 +467,7 @@ def nth_quarter_before(n: int = 0):
 
 def get_main_financial_reports_db():
     pd_ = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # ..
-    # # main_db_file = os.path.join(pd_, 'collect/data/financial_reports_main.feather') 
-    # main_db_file1 = os.path.join(pd_, 'collect/data/financial_reports_main1.feather') 
-    # main_db_file2 = os.path.join(pd_, 'collect/data/financial_reports_main2.feather') 
-    # main_db_file3 = os.path.join(pd_, 'collect/data/financial_reports_main3.feather') 
-    
-    # # main_db = pd.read_feather(main_db_file)
-    # main_db1 = pd.read_feather(main_db_file1)
-    # main_db2 = pd.read_feather(main_db_file2)
-    # main_db3 = pd.read_feather(main_db_file3)
-
-    # main_db = pd.concat([main_db1, main_db2, main_db3], axis=0)
-
     # git file size limit ~100Mb, so need to compress better using parquet
-    # with parquet, no need to split (yet)
     main_db_file = os.path.join(pd_, 'collect/data/financial_reports_main.parquet') 
     main_db = pd.read_parquet(main_db_file)
 
@@ -398,19 +475,6 @@ def get_main_financial_reports_db():
 
 def save_main_financial_reports_db(main_db: pd.DataFrame):
     pd_ = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # ..
-    # main_db_file1 = os.path.join(pd_, 'collect/data/financial_reports_main1.feather') 
-    # main_db_file2 = os.path.join(pd_, 'collect/data/financial_reports_main2.feather') 
-    # main_db_file3 = os.path.join(pd_, 'collect/data/financial_reports_main3.feather') 
-
-    # CHUNK_SIZE = int(len(main_db)/3)
-    # main_db1 = main_db.iloc[:CHUNK_SIZE]
-    # main_db2 = main_db.iloc[CHUNK_SIZE:CHUNK_SIZE*2]
-    # main_db3 = main_db.iloc[CHUNK_SIZE*2:]
-    
-    # main_db1.to_feather(main_db_file1)
-    # main_db2.to_feather(main_db_file2)
-    # main_db3.to_feather(main_db_file3)
-
     main_db_file = os.path.join(pd_, 'collect/data/financial_reports_main.parquet') 
     main_db.to_parquet(main_db_file, compression='zstd') 
 
@@ -434,9 +498,7 @@ def create_plots_from_plot_gen_control(plot_gen_control_file):
     price_db = pd.read_feather(price_dbfile)
 
     # -----------------------------------------------------
-    # in case to regenerate all plots use
-    # codelist = fdr.StockListing('KRX')['Code'].tolist()
-    # plot_ctrl = codelist
+    # plot_ctrl = codelist to regenerate
     # -----------------------------------------------------
     l = len(plot_ctrl)
     for i, code in enumerate(plot_ctrl):
