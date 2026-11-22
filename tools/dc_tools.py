@@ -14,6 +14,7 @@ import requests
 import re
 from io import StringIO
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
 pd_ = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # ..
 os.makedirs(os.path.join(pd_, 'collect/data'), exist_ok=True)
@@ -409,7 +410,20 @@ def fetch_loop(init_page_size=100, max_workers=8):
 def generate_krx_data(sql_db_creation=True): 
     df_krx = fetch_loop()
     pd_ = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # .. 
-    df_krx.to_feather(os.path.join(pd_, 'collect/data/df_krx.feather'))
+    _td = datetime.datetime.now().strftime('_%Y-%m-%d')
+    _target = 'collect/data/df_krx{info}.feather'
+    df_krx.to_feather(os.path.join(pd_, _target.format(info='')))
+    df_krx.to_feather(os.path.join(pd_, _target.format(info=_td)))
+
+    # Keep today's and the latest past file; remove older files
+    files = list(Path(pd_, 'collect/data').glob('df_krx_????-??-??.feather'))
+    today = datetime.date.today().isoformat()
+    past = [f for f in files if f.stem[-10:] < today]
+    latest = max((f.stem[-10:] for f in past), default='')
+
+    for f in files:
+        if f.stem[-10:] not in (today, latest):
+            f.unlink()
 
     # this db is used in TNP project for code search in node
     if sql_db_creation: 

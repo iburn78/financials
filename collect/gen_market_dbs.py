@@ -11,8 +11,6 @@ DF_KRX_PATH = Path(__file__).parent.parent / 'collect/data/df_krx.feather'
 df_krx = pd.read_feather(DF_KRX_PATH)
 END_DATE = (pd.Timestamp.today().normalize()-pd.Timedelta(days=1)).date()
 START_DATE = '2016-01-01'
-print(df_krx)
-print(df_krx.index.tolist())
 
 def _fetch(code, START_DATE):
     try:
@@ -20,7 +18,6 @@ def _fetch(code, START_DATE):
         return code, data[['Close', 'Volume']]
     except Exception as e:
         return code, e
-
 
 # this is only available through CACHE from 2026-03-08
 def _get_close(date_req = END_DATE):
@@ -53,18 +50,11 @@ def initialization(START_DATE, paths, workers=8):
     pdb = pd.concat(price_data, axis=1)
     vdb = pd.concat(volume_data, axis=1)
 
-    return pdb, vdb
+    # return pdb, vdb
 
-    # _save_db(pdb, paths[0])
-    # _save_db(vdb, paths[1])
+    _save_db(pdb, paths[0])
+    _save_db(vdb, paths[1])
 
-p, v = initialization(START_DATE=START_DATE, paths=[])
-print(p, v)
-import sys
-sys.exit()
-print('=--no ==-')
-
-#%% 
 def _save_db(db, path):
     # float is efficient in NaN handling etc 
     db = db.apply(pd.to_numeric, errors='coerce')
