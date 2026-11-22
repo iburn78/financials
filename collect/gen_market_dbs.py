@@ -12,6 +12,16 @@ df_krx = pd.read_feather(DF_KRX_PATH)
 END_DATE = (pd.Timestamp.today().normalize()-pd.Timedelta(days=1)).date()
 START_DATE = '2016-01-01'
 
+# need to make sync_status_file.json
+# include - time of syncing, scope, etc
+# gen_market_dbs should create df_krx, prices, and etc in a unified way
+#   - move it from gen_financial_records
+# financials and data both git pulled and pushed
+# linux should create: 
+# separate two processess as independent, check if possible
+
+
+
 def _fetch(code, START_DATE):
     try:
         data = fetch_code(code, START_DATE)
