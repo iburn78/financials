@@ -1,10 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-financials="$HOME/projects/financials"
-data="$HOME/projects/data"
+financials="${HOME}/projects/financials"
+data="${HOME}/projects/data"
 
-cd "$financials"
-git pull --no-edit origin main
+pull_repo() {
+  local repo="$1"
+  if [[ -d "${repo}/.git" ]]; then
+    git -C "${repo}" pull --ff-only origin main
+  else
+    echo "Not a git checkout: ${repo}" >&2
+    return 1
+  fi
+}
 
-cd "$data"
-git pull --no-edit origin main
+pull_repo "${financials}"
+pull_repo "${data}"

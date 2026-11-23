@@ -1,0 +1,7 @@
+# Run financial statements once daily at 02:00. A shared lock serializes Git
+# operations and collection because both jobs use the same repositories/data.
+00 02 * * * /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh financial && /home/andy/projects/financials/scripts/git_push.sh'
+
+# Refresh Naver market snapshots every two hours on weekdays. If the financial
+# job is still running, this market run is skipped; a later run catches up.
+30 8-20/2 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'

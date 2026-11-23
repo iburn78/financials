@@ -1,0 +1,1 @@
+50 6-23 * * * /Users/andy/projects/financials/scripts/git_pull.sh >> /Users/andy/projects/financials/collect/log/mac_git_pull.log 2>&1

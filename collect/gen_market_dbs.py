@@ -1,165 +1,204 @@
-#%%
-import pandas as pd
+"""Maintain daily KRX price and volume databases from Naver Finance."""
+
+from __future__ import annotations
+
 import json
-from pathlib import Path
-import FinanceDataReader as fdr
-from datetime import datetime, time
 from concurrent.futures import ThreadPoolExecutor
-from functools import partial
-from financials.tools.dc_tools import pvi_paths, fetch_code, generate_krx_data
+from datetime import datetime, time
+from pathlib import Path
 
-df_krx = generate_krx_data()
-END_DATE = (pd.Timestamp.today().normalize()-pd.Timedelta(days=1)).date()
-START_DATE = '2016-01-01'
-# need to make sync_status_file.json
-# include - time of syncing, scope, etc
-# linux should create: 
-# separate two processess as independent, check if possible
+import pandas as pd
+import FinanceDataReader as fdr
 
-#%% 
+from financials.tools.dc_tools import fetch_code, fetch_loop, pvi_paths
 
-def update_pv_info(path):
-    now = datetime.now()
-
-    pv_info = {
-        'last_updated': now.isoformat(timespec='seconds'),
-        'last_day_closed': now.weekday() < 5 and now.time() >= time(21, 0),
-        'outshares': {
-            str(code): int(value)
-            for code, value in df_krx['Stocks'].items()
-        }
-    }
-
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-    with path.open('w', encoding='utf-8') as f:
-        json.dump(pv_info, f, ensure_ascii=False, indent=2)
-
-    return pv_info
+START_DATE = "2016-01-01"
+# Allow a buffer around the exchange's close (configured here as 20:00).
+CLOSE_CONFIRMED_AFTER = time(20, 30)
+OPENING_BUFFER_END = time(8, 30)
+WORKERS = 8
 
 
-def _fetch(code, START_DATE):
+
+def _read_db(path):
+    db = pd.read_feather(path)
+    if db.empty or not isinstance(db.index, pd.DatetimeIndex):
+        raise ValueError(f"Invalid market database: {path}")
+    db.index = pd.to_datetime(db.index).normalize()
+    db = db.sort_index()
+    if db.index.has_duplicates:
+        db = db[~db.index.duplicated(keep="last")]
+    return db.apply(pd.to_numeric, errors="coerce")
+
+
+def _fetch_history(code):
+    data = fetch_code(str(code), START_DATE)
+    if data is None or data.empty or not {"Close", "Volume"}.issubset(data.columns):
+        raise ValueError(f"No usable OHLCV history for {code}")
+    data = data[["Close", "Volume"]].copy()
+    data.index = pd.to_datetime(data.index).normalize()
+    return str(code), data
+
+
+def _safe_fetch_history(code):
     try:
-        data = fetch_code(code, START_DATE)
-        return code, data[['Close', 'Volume']]
-    except Exception as e:
-        return code, e
+        return _fetch_history(code)
+    except Exception as exc:
+        return str(code), exc
 
-def initialization(START_DATE, paths, workers=8):
-    price_data = {}
-    volume_data = {}
 
-    codelist = df_krx.index.tolist()
-    
-    fetch = partial(_fetch, START_DATE=START_DATE)
-
-    # parallel download version: 8 requests are usually safe
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        results = executor.map(fetch, codelist)
-        for code, res in results:
-            if isinstance(res, Exception):
-                print(f"{code}: {res}")
+def _initialize(snapshot, paths):
+    price_parts, volume_parts = {}, {}
+    codes = snapshot.index.astype(str).tolist()
+    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        for code, result in pool.map(_safe_fetch_history, codes):
+            if isinstance(result, Exception):
+                print(f"History fetch failed for {code}: {result}")
                 continue
-            price_data[code] = res['Close']
-            volume_data[code] = res['Volume']
+            price_parts[code] = result["Close"]
+            volume_parts[code] = result["Volume"]
+    if not price_parts:
+        raise RuntimeError("No security history could be fetched; refusing to save empty databases")
+    price_db = pd.concat(price_parts, axis=1).sort_index()
+    volume_db = pd.concat(volume_parts, axis=1).sort_index()
+    _save_db(price_db, paths[0])
+    _save_db(volume_db, paths[1])
+    return price_db, volume_db
 
-    pdb = pd.concat(price_data, axis=1)
-    vdb = pd.concat(volume_data, axis=1)
-
-    _save_db(pdb, paths[0])
-    _save_db(vdb, paths[1])
 
 def _save_db(db, path):
-    # float is efficient in NaN handling etc 
-    db = db.apply(pd.to_numeric, errors='coerce')
-
-    # remove delisted
-    db = db.dropna(axis=1, subset=[db.index[-1]])
+    db = db.sort_index().apply(pd.to_numeric, errors="coerce")
+    db.index.name = "Date"
     db.to_feather(path)
 
-# this is only available through CACHE from 2026-03-08
-def _get_close(date_req = END_DATE):
-    date_req = date_req.strftime('%Y%m%d')
-    # Quick Fix (FDR Error): -------------------------
-    if date_req == '20260608': date_req = '20260605'
-    if date_req == '20260908': date_req = '20260907'
-    # ------------------------------------------------
-    _prev = fdr.StockListing('KRX', date_req)[['Code', 'Market', 'Close', 'Volume', 'Stocks']]
-    return _prev.loc[_prev['Market'].str.contains('KOSPI|KOSDAQ')]
 
-def _update_DB(DB, snapshot, date, column):
-    row = snapshot.set_index('Code')[column]
-    DB.loc[date, row.index] = row
+def _write_info(path, snapshot, session_date, closed, history_incomplete=()):
+    payload = {
+        "last_updated": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "last_session_date": pd.Timestamp(session_date).strftime("%Y-%m-%d"),
+        "last_day_closed": bool(closed),
+        "outshares": {str(code): int(value) for code, value in snapshot["Stocks"].items()},
+        "history_incomplete": sorted(map(str, history_incomplete)),
+    }
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    return DB
 
-def gen_market_DB(paths, START_DATE):
-    market_dates = fdr.DataReader('005930', START_DATE).index
-    # market_dates = market_dates[market_dates <= pd.Timestamp(END_DATE)]
-    # prev_close = _get_close()
-
-    [price_db_path, volume_db_path, pv_info_path, kospi_path, kosdaq_path, kospi200_path] = paths
-
+def _is_valid_pair(paths):
     try:
-        price_db = pd.read_feather(price_db_path)
-        volume_db = pd.read_feather(volume_db_path)
+        price_db, volume_db = _read_db(paths[0]), _read_db(paths[1])
+        if not price_db.index.equals(volume_db.index):
+            return False
+        with open(paths[2], encoding="utf-8") as f:
+            info = json.load(f)
+        if not isinstance(info.get("outshares"), dict):
+            return False
+        return price_db, volume_db, info
+    except (OSError, ValueError, TypeError, json.JSONDecodeError):
+        return False
 
-        dates_to_update = market_dates[market_dates.get_loc(price_db.index[-1]):]
 
-        last_available_close = _get_close(dates_to_update[0])
-        intersection = pd.merge(last_available_close, prev_close, on=['Code', 'Stocks'], how='inner')
+def gen_market_DB(paths=pvi_paths, start_date=START_DATE):
+    """Refresh today's snapshot, maintain the listed-code set, or rebuild on gaps."""
+    now = datetime.now().astimezone()
+    snapshot = fetch_loop()
+    snapshot.index = snapshot.index.astype(str)
+    snapshot = snapshot[~snapshot.index.duplicated(keep="last")]
+    snapshot = snapshot.loc[snapshot["Market"].isin(["KOSPI", "KOSDAQ"])]
+    if snapshot.empty:
+        raise RuntimeError("Naver returned an empty KOSPI/KOSDAQ snapshot")
+    snapshot["Close"] = pd.to_numeric(snapshot["Close"], errors="coerce")
+    snapshot["Volume"] = pd.to_numeric(snapshot["Volume"], errors="coerce")
 
-        # get codes that has different Stocks (outstanding shares)
-        code_list_to_fully_replace = list(set(prev_close['Code']) - set(intersection['Code']))
+    saved = _is_valid_pair(paths)
+    if saved is False:
+        print("Market databases or metadata are missing/corrupt; rebuilding from Naver history.")
+        price_db, volume_db = _initialize(snapshot, paths)
+        saved_info = {"history_incomplete": sorted(set(snapshot.index) - set(price_db.columns))}
+    else:
+        price_db, volume_db, saved_info = saved
 
-        # get codes newly added
-        code_list_to_fully_replace += list(set(prev_close['Code']) - set(price_db.columns))
+    # Use Samsung's Naver daily chart as the exchange-session calendar. If the
+    # database missed a session, historical snapshots cannot be recovered from
+    # fetch_loop; rebuild all symbols to avoid fabricating stale daily values.
+    calendar = fetch_code("005930", start_date)
+    if calendar is None or calendar.empty:
+        raise RuntimeError("Could not obtain the 005930 trading calendar")
+    calendar_days = pd.DatetimeIndex(calendar.index).normalize().unique().sort_values()
+    confirmed_today = now.time() >= CLOSE_CONFIRMED_AFTER
+    today = pd.Timestamp(now.date())
+    today_is_session = today in calendar_days
+    if now.time() < OPENING_BUFFER_END:
+        prior_days = calendar_days[calendar_days < today]
+        session_date = prior_days[-1] if len(prior_days) else calendar_days[-1]
+        is_closed = True
+    else:
+        session_date = today if today_is_session else calendar_days[-1]
+        is_closed = confirmed_today
 
-        new_prices = {}
-        new_volumes = {}
-        for code in code_list_to_fully_replace:
-            try:
-                code, res = _fetch(code, START_DATE)
-                new_prices[code] = res['Close']
-                new_volumes[code] = res['Volume']
-            except Exception as e:
-                print(f"Error retrieving full data for {code}: {e}")
-                continue
+    last_db_day = price_db.index[-1]
+    completed_days = calendar_days[calendar_days < today] if not confirmed_today else calendar_days[calendar_days <= today]
+    expected_completed_day = completed_days[-1] if len(completed_days) else calendar_days[-1]
+    previous_claimed_day = saved_info.get("last_session_date")
+    previous_claimed_closed = saved_info.get("last_day_closed")
+    if (last_db_day < expected_completed_day and not (not confirmed_today and last_db_day == calendar_days[-1])) or (
+        previous_claimed_day and previous_claimed_closed is False and today > pd.Timestamp(previous_claimed_day)
+    ):
+        print("A completed market session was missed; rebuilding because Naver cannot provide its old snapshot.")
+        price_db, volume_db = _initialize(snapshot, paths)
+        saved_info["history_incomplete"] = sorted(set(snapshot.index) - set(price_db.columns))
 
-        if new_prices:
-            price_db = price_db.drop(columns=new_prices.keys(), errors='ignore')
-            price_db = pd.concat([price_db, pd.DataFrame(new_prices)], axis=1)
+    current_codes = set(snapshot.index)
+    previous_codes = set(price_db.columns.astype(str))
+    old_shares = saved_info.get("outshares", {})
+    changed_share_codes = {
+        code for code in current_codes & previous_codes & set(old_shares)
+        if int(snapshot.at[code, "Stocks"]) != int(old_shares[code])
+    }
+    new_codes = current_codes - previous_codes
+    full_replace = changed_share_codes | new_codes | set(saved_info.get("history_incomplete", []))
+    history_incomplete = set()
 
-        if new_volumes:
-            volume_db = volume_db.drop(columns=new_volumes.keys(), errors='ignore')
-            volume_db = pd.concat([volume_db, pd.DataFrame(new_volumes)], axis=1)
+    if full_replace:
+        replacements = {}
+        codes = sorted(full_replace)
+        with ThreadPoolExecutor(max_workers=WORKERS) as pool:
+            for code, history in pool.map(_safe_fetch_history, codes):
+                if isinstance(history, Exception):
+                    print(f"Full replacement failed for {code}: {history}")
+                    history_incomplete.add(code)
+                    continue
+                replacements[code] = history
+        for code, history in replacements.items():
+            price_db = price_db.drop(columns=code, errors="ignore")
+            volume_db = volume_db.drop(columns=code, errors="ignore")
+            price_db = price_db.join(history["Close"].rename(code), how="outer")
+            volume_db = volume_db.join(history["Volume"].rename(code), how="outer")
 
-        # snapshot update should be done after full replaces above
-        for date in dates_to_update:
-            date_snapshot = _get_close(date)
-            price_db = _update_DB(price_db, date_snapshot, date, 'Close')
-            volume_db = _update_DB(volume_db, date_snapshot, date, 'Volume')
-    
-        _save_db(price_db, price_db_path)
-        _save_db(volume_db, volume_db_path)
+    # The live snapshot is the only source for today's values. Before opening,
+    # Naver still reports the previous close, so keep that value on its session.
+    price_db.loc[session_date, snapshot.index] = snapshot["Close"].values
+    volume_db.loc[session_date, snapshot.index] = snapshot["Volume"].values
 
-    except FileNotFoundError:  # Handle if files don't exist
-        print('files not found - creating new ones; could take some time')
-        initialization(START_DATE=START_DATE, paths=paths)
-        return
+    # Keep only codes currently listed by Naver.
+    price_db = price_db.reindex(columns=sorted(current_codes))
+    volume_db = volume_db.reindex(columns=sorted(current_codes))
+    _save_db(price_db, paths[0])
+    _save_db(volume_db, paths[1])
+    _write_info(paths[2], snapshot, session_date, is_closed, history_incomplete)
+    print(f"Updated {len(current_codes)} securities for {session_date.date()} (closed={is_closed}).")
 
-    # INDEX data collection
-    kospi = fdr.DataReader('KS11')
-    kosdaq = fdr.DataReader('KQ11')
-    kospi200 = fdr.DataReader('KS200')
+    # FDR remains the source for index series; only individual-stock prices
+    # and volumes use the Naver fetchers.
+    for symbol, path in zip(("KS11", "KQ11", "KS200"), paths[3:6]):
+        index_data = fdr.DataReader(symbol)
+        if index_data is None or index_data.empty:
+            raise RuntimeError(f"FDR returned no index data for {symbol}")
+        index_data.to_feather(path)
 
-    kospi.to_feather(kospi_path)
-    kosdaq.to_feather(kosdaq_path)
-    kospi200.to_feather(kospi200_path)
 
-if __name__ == '__main__': 
-    print(f'prices and volumes updates [initiating] {datetime.today().strftime("%Y-%m-%d %H:%M:%S")}')
-    START_DATE = '2016-01-01'
-    gen_market_DB(pvi_paths, START_DATE)
-    print(f"prices and volumes updates [completed] {datetime.today().strftime("%Y-%m-%d %H:%M:%S")}")
+if __name__ == "__main__":
+    print(f"Market database update started: {datetime.now().astimezone():%Y-%m-%d %H:%M:%S %Z}")
+    gen_market_DB()
+    print(f"Market database update completed: {datetime.now().astimezone():%Y-%m-%d %H:%M:%S %Z}")
