@@ -18252,3 +18252,21 @@ sent 21,146,621 bytes  received 54 bytes  42,293,350.00 bytes/sec
 total size is 72,827,411  speedup is 3.44
 prices and volumes updates [initiating] 2026-11-23 02:00:04
 prices and volumes updates [completed]
+sending incremental file list
+df_krx.db
+update_info.txt
+
+sent 417,306 bytes  received 56 bytes  834,724.00 bytes/sec
+total size is 1,081,092,395  speedup is 2,590.30
+sending incremental file list
+df_krx.feather
+df_krx_2026-11-22.feather
+df_krx_2026-11-23.feather
+kosdaq.feather
+kospi.feather
+kospi200.feather
+price_db.feather
+volume_db.feather
+
+sent 52,133,544 bytes  received 168 bytes  34,755,808.00 bytes/sec
+total size is 73,116,663  speedup is 1.40
