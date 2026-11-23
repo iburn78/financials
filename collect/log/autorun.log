@@ -18523,3 +18523,9 @@ volume_db.feather
 
 sent 72,987,077 bytes  received 168 bytes  48,658,163.33 bytes/sec
 total size is 73,113,239  speedup is 1.00
+[2026-11-23 20:30:03 KST] fr_collect mode=market started
+Market database update started: 2026-11-23 20:30:06 KST
+Market databases or metadata are missing/corrupt; rebuilding from Naver history.
+Updated 2773 securities for 2026-11-23 (closed=True).
+Market database update completed: 2026-11-23 20:32:02 KST
+[2026-11-23 20:32:03 KST] fr_collect mode=market finished
