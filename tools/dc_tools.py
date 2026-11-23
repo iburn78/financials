@@ -14,19 +14,19 @@ import requests
 import re
 from io import StringIO
 from concurrent.futures import ThreadPoolExecutor
-from pathlib import Path
 
 pd_ = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # ..
 os.makedirs(os.path.join(pd_, 'collect/data'), exist_ok=True)
 os.makedirs(os.path.join(pd_, 'collect/log'), exist_ok=True)
 price_db_path = os.path.join(pd_, 'collect/data/price_db.feather')
 volume_db_path = os.path.join(pd_, 'collect/data/volume_db.feather')
+pv_info_path = os.path.join(pd_, 'collect/data/pv_info.json')
 kospi_path = os.path.join(pd_, 'collect/data/kospi.feather')
 kosdaq_path = os.path.join(pd_, 'collect/data/kosdaq.feather')
 kospi200_path = os.path.join(pd_, 'collect/data/kospi200.feather')
 
 # price, volume, index
-pvi_paths = [price_db_path, volume_db_path, kospi_path, kosdaq_path, kospi200_path]
+pvi_paths = [price_db_path, volume_db_path, pv_info_path, kospi_path, kosdaq_path, kospi200_path]
 
 def plot_company_financial_summary(fr_db, pr_db, code, path=None, start_quarter='2016_1Q'): # use 2016 1Q as start quarter (dart api data starts from 2015 anyway)
     quarter_cols= [s for s in fr_db.columns.values if 'Q' in s]
@@ -308,7 +308,7 @@ def merge_update(A, F=None, P=None, index_cols=['code', 'fs_div', 'account_nm'])
 
     return A
 
-
+# 최종가 (e.g., prices including after market)
 def fetch_code(symbol, start, end=None):
     start = pd.to_datetime(start) if start else datetime.datetime(1980, 1, 1)
     end = pd.to_datetime(end) if end else datetime.datetime.today()
@@ -328,7 +328,7 @@ def fetch_code(symbol, start, end=None):
     df['Change'] = df['Close'].pct_change()
     return df.loc[start:end]
 
-
+# 최종가 (e.g., prices including after market)
 def fetch_loop(init_page_size=100, max_workers=8):
     BASE_URL = "https://m.stock.naver.com/api/stocks/marketValue/{market}?page={page}&pageSize={pageSize}"
     rows = {}
@@ -410,20 +410,7 @@ def fetch_loop(init_page_size=100, max_workers=8):
 def generate_krx_data(sql_db_creation=True): 
     df_krx = fetch_loop()
     pd_ = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # .. 
-    _td = datetime.datetime.now().strftime('_%Y-%m-%d')
-    _target = 'collect/data/df_krx{info}.feather'
-    df_krx.to_feather(os.path.join(pd_, _target.format(info='')))
-    df_krx.to_feather(os.path.join(pd_, _target.format(info=_td)))
-
-    # Keep today's and the latest past file; remove older files
-    files = list(Path(pd_, 'collect/data').glob('df_krx_????-??-??.feather'))
-    today = datetime.date.today().isoformat()
-    past = [f for f in files if f.stem[-10:] < today]
-    latest = max((f.stem[-10:] for f in past), default='')
-
-    for f in files:
-        if f.stem[-10:] not in (today, latest):
-            f.unlink()
+    df_krx.to_feather(os.path.join(pd_, 'collect/data/df_krx.feather'))
 
     # this db is used in TNP project for code search in node
     if sql_db_creation: 
@@ -441,7 +428,6 @@ def generate_krx_data(sql_db_creation=True):
             f.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
     return df_krx
-
 
 def log_print(log_file, message):
     print(message)

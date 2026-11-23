@@ -1,25 +1,42 @@
 #%%
 import pandas as pd
+import json
 from pathlib import Path
 import FinanceDataReader as fdr
-from datetime import datetime
+from datetime import datetime, time
 from concurrent.futures import ThreadPoolExecutor
 from functools import partial
-from financials.tools.dc_tools import pvi_paths, fetch_loop, fetch_code
+from financials.tools.dc_tools import pvi_paths, fetch_code, generate_krx_data
 
-DF_KRX_PATH = Path(__file__).parent.parent / 'collect/data/df_krx.feather'
-df_krx = pd.read_feather(DF_KRX_PATH)
+df_krx = generate_krx_data()
 END_DATE = (pd.Timestamp.today().normalize()-pd.Timedelta(days=1)).date()
 START_DATE = '2016-01-01'
-
 # need to make sync_status_file.json
 # include - time of syncing, scope, etc
-# gen_market_dbs should create df_krx, prices, and etc in a unified way
-#   - move it from gen_financial_records
-# financials and data both git pulled and pushed
 # linux should create: 
 # separate two processess as independent, check if possible
 
+#%% 
+
+def update_pv_info(path):
+    now = datetime.now()
+
+    pv_info = {
+        'last_updated': now.isoformat(timespec='seconds'),
+        'last_day_closed': now.weekday() < 5 and now.time() >= time(21, 0),
+        'outshares': {
+            str(code): int(value)
+            for code, value in df_krx['Stocks'].items()
+        }
+    }
+
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    with path.open('w', encoding='utf-8') as f:
+        json.dump(pv_info, f, ensure_ascii=False, indent=2)
+
+    return pv_info
 
 
 def _fetch(code, START_DATE):
@@ -28,16 +45,6 @@ def _fetch(code, START_DATE):
         return code, data[['Close', 'Volume']]
     except Exception as e:
         return code, e
-
-# this is only available through CACHE from 2026-03-08
-def _get_close(date_req = END_DATE):
-    date_req = date_req.strftime('%Y%m%d')
-    # Quick Fix (FDR Error): -------------------------
-    if date_req == '20260608': date_req = '20260605'
-    if date_req == '20260908': date_req = '20260907'
-    # ------------------------------------------------
-    _prev = fdr.StockListing('KRX', date_req)[['Code', 'Market', 'Close', 'Volume', 'Stocks']]
-    return _prev.loc[_prev['Market'].str.contains('KOSPI|KOSDAQ')]
 
 def initialization(START_DATE, paths, workers=8):
     price_data = {}
@@ -60,8 +67,6 @@ def initialization(START_DATE, paths, workers=8):
     pdb = pd.concat(price_data, axis=1)
     vdb = pd.concat(volume_data, axis=1)
 
-    # return pdb, vdb
-
     _save_db(pdb, paths[0])
     _save_db(vdb, paths[1])
 
@@ -73,6 +78,16 @@ def _save_db(db, path):
     db = db.dropna(axis=1, subset=[db.index[-1]])
     db.to_feather(path)
 
+# this is only available through CACHE from 2026-03-08
+def _get_close(date_req = END_DATE):
+    date_req = date_req.strftime('%Y%m%d')
+    # Quick Fix (FDR Error): -------------------------
+    if date_req == '20260608': date_req = '20260605'
+    if date_req == '20260908': date_req = '20260907'
+    # ------------------------------------------------
+    _prev = fdr.StockListing('KRX', date_req)[['Code', 'Market', 'Close', 'Volume', 'Stocks']]
+    return _prev.loc[_prev['Market'].str.contains('KOSPI|KOSDAQ')]
+
 def _update_DB(DB, snapshot, date, column):
     row = snapshot.set_index('Code')[column]
     DB.loc[date, row.index] = row
@@ -81,10 +96,10 @@ def _update_DB(DB, snapshot, date, column):
 
 def gen_market_DB(paths, START_DATE):
     market_dates = fdr.DataReader('005930', START_DATE).index
-    market_dates = market_dates[market_dates <= pd.Timestamp(END_DATE)]
-    prev_close = _get_close()
+    # market_dates = market_dates[market_dates <= pd.Timestamp(END_DATE)]
+    # prev_close = _get_close()
 
-    [price_db_path, volume_db_path, kospi_path, kosdaq_path, kospi200_path] = paths
+    [price_db_path, volume_db_path, pv_info_path, kospi_path, kosdaq_path, kospi200_path] = paths
 
     try:
         price_db = pd.read_feather(price_db_path)
@@ -147,4 +162,4 @@ if __name__ == '__main__':
     print(f'prices and volumes updates [initiating] {datetime.today().strftime("%Y-%m-%d %H:%M:%S")}')
     START_DATE = '2016-01-01'
     gen_market_DB(pvi_paths, START_DATE)
-    print("prices and volumes updates [completed]")
+    print(f"prices and volumes updates [completed] {datetime.today().strftime("%Y-%m-%d %H:%M:%S")}")
