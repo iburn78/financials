@@ -18703,3 +18703,8 @@ Financial data collection log >>
 950260 | 76/76
 2026-11-24 02:22:29.402719 | 950260 | quarterly data of 950260 is empty.
 [2026-11-24 02:22:29 KST] fr_collect mode=financial finished
+[2026-11-24 08:30:02 KST] fr_collect mode=market started
+Market database update started: 2026-11-24 08:30:04 KST
+Updated 2773 securities for 2026-11-23 (closed=False).
+Market database update completed: 2026-11-24 08:30:12 KST
+[2026-11-24 08:30:12 KST] fr_collect mode=market finished
