@@ -18894,3 +18894,8 @@ Financial data collection log >>
 477340 | 29/30
 481850 | 30/30
 [2026-11-25 02:09:33 KST] fr_collect mode=financial finished
+[2026-11-25 08:05:02 KST] fr_collect mode=market started
+Market database update started: 2026-11-25 08:05:04 KST
+PV update skipped: 2026-11-25 is not a 005930 market session; prior_session=2026-11-24 remains unchanged.
+Market database update completed: 2026-11-25 08:05:05 KST
+[2026-11-25 08:05:06 KST] fr_collect mode=market finished
