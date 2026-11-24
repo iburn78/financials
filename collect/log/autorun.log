@@ -18818,3 +18818,79 @@ Market database update started: 2026-11-24 21:30:04 KST
 PV updated: session=2026-11-24 status=closed; previous_session=2026-11-23 status=closed; securities=2774.
 Market database update completed: 2026-11-24 21:30:11 KST
 [2026-11-24 21:30:11 KST] fr_collect mode=market finished
+[2026-11-25 02:00:03 KST] fr_collect mode=financial started
+Company health data collection initiated at 2026-11-25 02:00:05.470841
+Updating KRX data...
+Updating between dates: 2026-11-17 / 2026-11-25
+FULL rescan codes:
+Total 26 items.
+[0-25] ['0013Y0', '002880', '003070', '005010', '005670', '006110', '016360', '022220', '032580', '044820', '065060', '066310', '073540', '090370', '109860', '114630', '182400', '183490', '199820', '206640', '321370', '321820', '389650', '424870', '457370', '477340']
+PARTIAL rescan codes:
+Total 4 items.
+[0-3] ['348950', '481850', '334890', '001570']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-25 02:00:12.179115, no: 0, code 0013Y0 in process
+2026-11-25 02:00:17.949882, no: 1, code 002880 in process
+2026-11-25 02:00:35.469607, no: 2, code 003070 in process
+2026-11-25 02:00:46.815316, no: 3, code 005010 in process
+2026-11-25 02:01:03.101879, no: 4, code 005670 in process
+2026-11-25 02:01:20.276463, no: 5, code 006110 in process
+2026-11-25 02:01:37.258749, no: 6, code 016360 in process
+2026-11-25 02:01:45.907326, no: 7, code 022220 in process
+2026-11-25 02:02:01.860127, no: 8, code 032580 in process
+2026-11-25 02:02:18.036694, no: 9, code 044820 in process
+2026-11-25 02:02:34.403947, no: 10, code 065060 in process
+2026-11-25 02:02:50.254328, no: 11, code 066310 in process
+2026-11-25 02:03:07.202427, no: 12, code 073540 in process
+2026-11-25 02:03:23.272492, no: 13, code 090370 in process
+2026-11-25 02:03:39.156739, no: 14, code 109860 in process
+2026-11-25 02:03:55.805007, no: 15, code 114630 in process
+2026-11-25 02:04:11.919503, no: 16, code 182400 in process
+2026-11-25 02:04:28.103549, no: 17, code 183490 in process
+2026-11-25 02:04:42.158726, no: 18, code 199820 in process
+2026-11-25 02:04:53.797980, no: 19, code 206640 in process
+2026-11-25 02:05:10.863366, no: 20, code 321370 in process
+2026-11-25 02:05:20.021373, no: 21, code 321820 in process
+2026-11-25 02:05:31.873508, no: 22, code 389650 in process
+2026-11-25 02:05:39.544389, no: 23, code 424870 in process
+2026-11-25 02:05:46.593091, no: 24, code 457370 in process
+2026-11-25 02:05:54.279452, no: 25, code 477340 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-25 02:06:05.979354, no: 0, code 348950 in process
+2026-11-25 02:06:12.038440, no: 1, code 481850 in process
+2026-11-25 02:06:18.008868, no: 2, code 334890 in process
+2026-11-25 02:06:24.068935, no: 3, code 001570 in process
+== Update finished ==
+0013Y0 | 1/30
+001570 | 2/30
+002880 | 3/30
+003070 | 4/30
+005010 | 5/30
+005670 | 6/30
+006110 | 7/30
+016360 | 8/30
+022220 | 9/30
+032580 | 10/30
+044820 | 11/30
+065060 | 12/30
+066310 | 13/30
+073540 | 14/30
+090370 | 15/30
+109860 | 16/30
+114630 | 17/30
+182400 | 18/30
+183490 | 19/30
+199820 | 20/30
+206640 | 21/30
+321370 | 22/30
+321820 | 23/30
+334890 | 24/30
+348950 | 25/30
+389650 | 26/30
+424870 | 27/30
+457370 | 28/30
+477340 | 29/30
+481850 | 30/30
+[2026-11-25 02:09:33 KST] fr_collect mode=financial finished
