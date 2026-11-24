@@ -6,4 +6,4 @@
 
 05 08-09 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
 30 08-09 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
-00/30 10-21 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
+00,30 10-21 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
