@@ -1,12 +1,9 @@
 # Run financial statements once daily at 02:00. A shared lock serializes Git
 # operations and collection because both jobs use the same repositories/data.
+# Busy financial collection causes a # market run to be skipped.
+
 00 02 * * * /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh financial && /home/andy/projects/financials/scripts/git_push.sh'
 
-# Morning snapshot. It is always assigned to today's row and marked open.
-30 8 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
-
-# Update current-session prices every two hours, starting at 09:10. Runs
-# A close-confirming run follows at 20:30. Busy financial collection causes a
-# market run to be skipped.
-10 9-19/2 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
-30 20 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
+05 08-09 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
+30 08-09 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
+00/30 10-21 * * 1-5 /usr/bin/flock -n /tmp/financials_cron.lock /bin/bash -c '/home/andy/projects/financials/scripts/git_pull.sh && /home/andy/projects/financials/scripts/fr_collect.sh market && /home/andy/projects/financials/scripts/git_push.sh'
