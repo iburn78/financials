@@ -1,5 +1,4 @@
-"""Maintain daily KRX price and volume databases from Naver Finance."""
-
+"""Maintain daily KRX price and volume databases"""
 from __future__ import annotations
 
 import json
@@ -13,12 +12,10 @@ import FinanceDataReader as fdr
 from financials.tools.dc_tools import fetch_code, fetch_loop, pvi_paths
 
 START_DATE = "2016-01-01"
-# Allow a buffer around the exchange's close (configured here as 20:00).
+# Snapshot rows are assigned to the date of the run. Only the 20:30 run is
+# treated as confirmation that the session has closed.
 CLOSE_CONFIRMED_AFTER = time(20, 30)
-OPENING_BUFFER_END = time(8, 30)
 WORKERS = 8
-
-
 
 def _read_db(path):
     db = pd.read_feather(path)
@@ -72,11 +69,31 @@ def _save_db(db, path):
     db.to_feather(path)
 
 
-def _write_info(path, snapshot, session_date, closed, history_incomplete=()):
+def _write_info(
+    path,
+    snapshot,
+    session_date,
+    closed,
+    history_incomplete=(),
+    previous_session_date=None,
+    previous_session_closed=None,
+):
     payload = {
-        "last_updated": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "last_updated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
         "last_session_date": pd.Timestamp(session_date).strftime("%Y-%m-%d"),
-        "last_day_closed": bool(closed),
+        "last_session_closed": bool(closed),
+        "last_session_status": "closed" if closed else "open",
+        "previous_session_date": (
+            pd.Timestamp(previous_session_date).strftime("%Y-%m-%d")
+            if previous_session_date is not None else None
+        ),
+        "previous_session_closed": (
+            bool(previous_session_closed) if previous_session_closed is not None else None
+        ),
+        "previous_session_status": (
+            ("closed" if previous_session_closed else "unconfirmed")
+            if previous_session_closed is not None else None
+        ),
         "outshares": {str(code): int(value) for code, value in snapshot["Stocks"].items()},
         "history_incomplete": sorted(map(str, history_incomplete)),
     }
@@ -100,54 +117,102 @@ def _is_valid_pair(paths):
 
 
 def gen_market_DB(paths=pvi_paths, start_date=START_DATE):
-    """Refresh today's snapshot, maintain the listed-code set, or rebuild on gaps."""
+    """Refresh today's session, check the prior close, and recover missed closes."""
     now = datetime.now().astimezone()
-    snapshot = fetch_loop()
-    snapshot.index = snapshot.index.astype(str)
-    snapshot = snapshot[~snapshot.index.duplicated(keep="last")]
-    snapshot = snapshot.loc[snapshot["Market"].isin(["KOSPI", "KOSDAQ"])]
-    if snapshot.empty:
-        raise RuntimeError("Naver returned an empty KOSPI/KOSDAQ snapshot")
-    snapshot["Close"] = pd.to_numeric(snapshot["Close"], errors="coerce")
-    snapshot["Volume"] = pd.to_numeric(snapshot["Volume"], errors="coerce")
 
     saved = _is_valid_pair(paths)
-    if saved is False:
-        print("Market databases or metadata are missing/corrupt; rebuilding from Naver history.")
-        price_db, volume_db = _initialize(snapshot, paths)
-        saved_info = {"history_incomplete": sorted(set(snapshot.index) - set(price_db.columns))}
-    else:
+    if saved is not False:
         price_db, volume_db, saved_info = saved
+    else:
+        price_db = volume_db = None
+        saved_info = {}
 
-    # Use Samsung's Naver daily chart as the exchange-session calendar. If the
-    # database missed a session, historical snapshots cannot be recovered from
-    # fetch_loop; rebuild all symbols to avoid fabricating stale daily values.
+    # 005930's daily dates provide the trading-session calendar.
     calendar = fetch_code("005930", start_date)
     if calendar is None or calendar.empty:
         raise RuntimeError("Could not obtain the 005930 trading calendar")
     calendar_days = pd.DatetimeIndex(calendar.index).normalize().unique().sort_values()
-    confirmed_today = now.time() >= CLOSE_CONFIRMED_AFTER
     today = pd.Timestamp(now.date())
+    prior_days = calendar_days[calendar_days < today]
+    if len(prior_days) == 0:
+        raise RuntimeError(f"No prior market session found before {today.date()}")
+    prior_session_date = prior_days[-1]
     today_is_session = today in calendar_days
-    if now.time() < OPENING_BUFFER_END:
-        prior_days = calendar_days[calendar_days < today]
-        session_date = prior_days[-1] if len(prior_days) else calendar_days[-1]
-        is_closed = True
+    # A close is trusted only when both metadata and the database identify the
+    # immediately prior exchange session. Older metadata is read for migration.
+    if saved is False:
+        needs_rebuild = True
     else:
-        session_date = today if today_is_session else calendar_days[-1]
-        is_closed = confirmed_today
+        stored_session_date = saved_info.get("last_session_date")
+        stored_closed = saved_info.get(
+            "last_session_closed", saved_info.get("last_day_closed")
+        )
+        db_has_prior_session = price_db.index[-1] >= prior_session_date
+        if stored_session_date:
+            stored_session_date = pd.Timestamp(stored_session_date).normalize()
+        if stored_session_date == today:
+            prior_close_confirmed = (
+                pd.Timestamp(saved_info.get("previous_session_date")).normalize()
+                == prior_session_date
+                and saved_info.get("previous_session_closed") is True
+            ) if saved_info.get("previous_session_date") else False
+        else:
+            prior_close_confirmed = (
+                stored_session_date == prior_session_date and stored_closed is True
+            )
+        needs_rebuild = not db_has_prior_session or not prior_close_confirmed
 
-    last_db_day = price_db.index[-1]
-    completed_days = calendar_days[calendar_days < today] if not confirmed_today else calendar_days[calendar_days <= today]
-    expected_completed_day = completed_days[-1] if len(completed_days) else calendar_days[-1]
-    previous_claimed_day = saved_info.get("last_session_date")
-    previous_claimed_closed = saved_info.get("last_day_closed")
-    if (last_db_day < expected_completed_day and not (not confirmed_today and last_db_day == calendar_days[-1])) or (
-        previous_claimed_day and previous_claimed_closed is False and today > pd.Timestamp(previous_claimed_day)
-    ):
-        print("A completed market session was missed; rebuilding because Naver cannot provide its old snapshot.")
+    if saved is False:
+        print("Market databases or metadata are missing/corrupt; rebuilding...")
+    elif needs_rebuild:
+        print(
+            f"Recovery required: prior session {prior_session_date.date()} is not "
+            "confirmed closed in metadata/database; rebuilding..."
+        )
+
+    snapshot = None
+    if saved is False or needs_rebuild:
+        snapshot = fetch_loop()
+        snapshot.index = snapshot.index.astype(str)
+        snapshot = snapshot[~snapshot.index.duplicated(keep="last")]
+        snapshot = snapshot.loc[snapshot["Market"].isin(["KOSPI", "KOSDAQ"])]
+        if snapshot.empty:
+            raise RuntimeError("Returned an empty KOSPI/KOSDAQ snapshot")
+        snapshot["Close"] = pd.to_numeric(snapshot["Close"], errors="coerce")
+        snapshot["Volume"] = pd.to_numeric(snapshot["Volume"], errors="coerce")
         price_db, volume_db = _initialize(snapshot, paths)
         saved_info["history_incomplete"] = sorted(set(snapshot.index) - set(price_db.columns))
+
+        if not today_is_session:
+            # On a non-session day, keep the rebuild's prior-session history
+            # and do not label a stale quote as today's trading snapshot.
+            _write_info(
+                paths[2], snapshot, prior_session_date, True,
+                saved_info["history_incomplete"],
+            )
+            print(
+                f"PV rebuild complete: session={prior_session_date.date()} "
+                "status=closed; no live snapshot row applied."
+            )
+            _refresh_indices(paths)
+            return
+
+    if not today_is_session:
+        print(
+            f"PV update skipped: {today.date()} is not a 005930 market session; "
+            f"prior_session={prior_session_date.date()} remains unchanged."
+        )
+        return
+
+    if snapshot is None:
+        snapshot = fetch_loop()
+        snapshot.index = snapshot.index.astype(str)
+        snapshot = snapshot[~snapshot.index.duplicated(keep="last")]
+        snapshot = snapshot.loc[snapshot["Market"].isin(["KOSPI", "KOSDAQ"])]
+        if snapshot.empty:
+            raise RuntimeError("Returned an empty KOSPI/KOSDAQ snapshot")
+        snapshot["Close"] = pd.to_numeric(snapshot["Close"], errors="coerce")
+        snapshot["Volume"] = pd.to_numeric(snapshot["Volume"], errors="coerce")
 
     current_codes = set(snapshot.index)
     previous_codes = set(price_db.columns.astype(str))
@@ -176,19 +241,42 @@ def gen_market_DB(paths=pvi_paths, start_date=START_DATE):
             price_db = price_db.join(history["Close"].rename(code), how="outer")
             volume_db = volume_db.join(history["Volume"].rename(code), how="outer")
 
-    # The live snapshot is the only source for today's values. Before opening,
-    # Naver still reports the previous close, so keep that value on its session.
-    price_db.loc[session_date, snapshot.index] = snapshot["Close"].values
-    volume_db.loc[session_date, snapshot.index] = snapshot["Volume"].values
+    session_closed = now.time() >= CLOSE_CONFIRMED_AFTER
+    price_db.loc[today, snapshot.index] = snapshot["Close"].values
+    volume_db.loc[today, snapshot.index] = snapshot["Volume"].values
 
-    # Keep only codes currently listed by Naver.
+    # Keep only codes currently listed.
     price_db = price_db.reindex(columns=sorted(current_codes))
     volume_db = volume_db.reindex(columns=sorted(current_codes))
     _save_db(price_db, paths[0])
     _save_db(volume_db, paths[1])
-    _write_info(paths[2], snapshot, session_date, is_closed, history_incomplete)
-    print(f"Updated {len(current_codes)} securities for {session_date.date()} (closed={is_closed}).")
+    if saved_info.get("last_session_date") == today.strftime("%Y-%m-%d"):
+        previous_session_date = saved_info.get("previous_session_date")
+        previous_session_closed = saved_info.get("previous_session_closed")
+    elif needs_rebuild or saved is False:
+        previous_session_date = prior_session_date
+        previous_session_closed = True
+    else:
+        previous_session_date = saved_info.get("last_session_date")
+        previous_session_closed = saved_info.get(
+            "last_session_closed", saved_info.get("last_day_closed")
+        )
+    _write_info(
+        paths[2], snapshot, today, session_closed, history_incomplete,
+        previous_session_date, previous_session_closed,
+    )
+    status = "closed" if session_closed else "open"
+    previous_status = "closed" if previous_session_closed is True else "unconfirmed"
+    print(
+        f"PV updated: session={today.date()} status={status}; "
+        f"previous_session={previous_session_date or 'unknown'} "
+        f"status={previous_status}; securities={len(current_codes)}."
+    )
 
+    _refresh_indices(paths)
+
+
+def _refresh_indices(paths):
     # FDR remains the source for index series; only individual-stock prices
     # and volumes use the Naver fetchers.
     for symbol, path in zip(("KS11", "KQ11", "KS200"), paths[3:6]):
