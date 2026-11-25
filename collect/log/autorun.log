@@ -19034,3 +19034,65 @@ Market database update started: 2026-11-25 21:30:04 KST
 PV updated: session=2026-11-25 status=closed; previous_session=2026-11-24 status=closed; securities=2774.
 Market database update completed: 2026-11-25 21:30:11 KST
 [2026-11-25 21:30:12 KST] fr_collect mode=market finished
+[2026-11-26 02:00:03 KST] fr_collect mode=financial started
+Company health data collection initiated at 2026-11-26 02:00:06.132940
+Updating KRX data...
+Updating between dates: 2026-11-18 / 2026-11-26
+FULL rescan codes:
+Total 17 items.
+[0-16] ['002880', '005010', '005670', '006110', '016360', '022220', '032580', '044820', '065060', '073540', '109860', '114630', '182400', '183490', '235980', '321820', '389650']
+PARTIAL rescan codes:
+Total 5 items.
+[0-4] ['495910', '950210', '001570', '334890', '481850']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-26 02:00:12.498164, no: 0, code 002880 in process
+2026-11-26 02:00:29.164454, no: 1, code 005010 in process
+2026-11-26 02:00:47.391750, no: 2, code 005670 in process
+2026-11-26 02:01:03.403652, no: 3, code 006110 in process
+2026-11-26 02:01:19.692092, no: 4, code 016360 in process
+2026-11-26 02:01:28.607875, no: 5, code 022220 in process
+2026-11-26 02:01:44.522579, no: 6, code 032580 in process
+2026-11-26 02:02:01.117200, no: 7, code 044820 in process
+2026-11-26 02:02:17.393736, no: 8, code 065060 in process
+2026-11-26 02:02:34.043542, no: 9, code 073540 in process
+2026-11-26 02:02:50.003790, no: 10, code 109860 in process
+2026-11-26 02:03:05.830801, no: 11, code 114630 in process
+2026-11-26 02:03:27.290566, no: 12, code 182400 in process
+2026-11-26 02:03:43.050218, no: 13, code 183490 in process
+2026-11-26 02:03:56.943803, no: 14, code 235980 in process
+2026-11-26 02:04:08.907801, no: 15, code 321820 in process
+2026-11-26 02:04:20.219608, no: 16, code 389650 in process
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-26 02:04:31.877522, no: 0, code 495910 in process
+2026-11-26 02:04:37.557956, no: 1, code 950210 in process
+----> no: 1, code 950210 currency not in KRW, skipping
+2026-11-26 02:04:42.746990, no: 2, code 001570 in process
+2026-11-26 02:04:49.944358, no: 3, code 334890 in process
+2026-11-26 02:04:55.944325, no: 4, code 481850 in process
+== Update finished ==
+001570 | 1/22
+002880 | 2/22
+005010 | 3/22
+005670 | 4/22
+006110 | 5/22
+016360 | 6/22
+022220 | 7/22
+032580 | 8/22
+044820 | 9/22
+065060 | 10/22
+073540 | 11/22
+109860 | 12/22
+114630 | 13/22
+182400 | 14/22
+183490 | 15/22
+235980 | 16/22
+321820 | 17/22
+334890 | 18/22
+389650 | 19/22
+481850 | 20/22
+495910 | 21/22
+950210 | 22/22
+2026-11-26 02:07:20.219396 | 950210 | quarterly data of 950210 is empty.
+[2026-11-26 02:07:20 KST] fr_collect mode=financial finished
