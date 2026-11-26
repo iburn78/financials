@@ -19191,3 +19191,8 @@ Market database update started: 2026-11-26 17:00:04 KST
 PV updated: session=2026-11-26 status=open; previous_session=2026-11-25 status=closed; securities=2774.
 Market database update completed: 2026-11-26 17:00:13 KST
 [2026-11-26 17:00:14 KST] fr_collect mode=market finished
+[2026-11-26 17:30:02 KST] fr_collect mode=market started
+Market database update started: 2026-11-26 17:30:04 KST
+PV updated: session=2026-11-26 status=open; previous_session=2026-11-25 status=closed; securities=2774.
+Market database update completed: 2026-11-26 17:30:12 KST
+[2026-11-26 17:30:13 KST] fr_collect mode=market finished
