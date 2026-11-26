@@ -19236,3 +19236,57 @@ Market database update started: 2026-11-26 21:30:04 KST
 PV updated: session=2026-11-26 status=closed; previous_session=2026-11-25 status=closed; securities=2774.
 Market database update completed: 2026-11-26 21:30:14 KST
 [2026-11-26 21:30:14 KST] fr_collect mode=market finished
+[2026-11-27 02:00:02 KST] fr_collect mode=financial started
+Company health data collection initiated at 2026-11-27 02:00:04.909323
+Updating KRX data...
+Updating between dates: 2026-11-19 / 2026-11-27
+FULL rescan codes:
+Total 16 items.
+[0-15] ['002880', '005670', '006110', '016360', '022220', '032580', '044820', '065060', '073540', '109860', '114630', '235980', '321820', '389650', '389680', '950210']
+PARTIAL rescan codes:
+Total 2 items.
+[0-1] ['334890', '001570']
+full_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-27 02:00:11.741163, no: 0, code 002880 in process
+2026-11-27 02:00:29.351149, no: 1, code 005670 in process
+2026-11-27 02:00:48.793461, no: 2, code 006110 in process
+2026-11-27 02:01:09.160208, no: 3, code 016360 in process
+2026-11-27 02:01:21.416773, no: 4, code 022220 in process
+2026-11-27 02:01:41.602767, no: 5, code 032580 in process
+2026-11-27 02:01:59.642004, no: 6, code 044820 in process
+2026-11-27 02:02:16.775007, no: 7, code 065060 in process
+2026-11-27 02:02:33.359014, no: 8, code 073540 in process
+2026-11-27 02:02:50.274157, no: 9, code 109860 in process
+2026-11-27 02:03:08.712398, no: 10, code 114630 in process
+2026-11-27 02:03:26.920004, no: 11, code 235980 in process
+2026-11-27 02:03:39.631583, no: 12, code 321820 in process
+2026-11-27 02:03:51.511306, no: 13, code 389650 in process
+2026-11-27 02:03:59.199217, no: 14, code 389680 in process
+2026-11-27 02:04:06.823677, no: 15, code 950210 in process
+----> no: 15, code 950210 currency not in KRW, skipping
+partial_rescan batch operation: 0
+Financial data collection log >> 
+2026-11-27 02:04:16.099330, no: 0, code 334890 in process
+2026-11-27 02:04:22.126360, no: 1, code 001570 in process
+== Update finished ==
+001570 | 1/18
+002880 | 2/18
+005670 | 3/18
+006110 | 4/18
+016360 | 5/18
+022220 | 6/18
+032580 | 7/18
+044820 | 8/18
+065060 | 9/18
+073540 | 10/18
+109860 | 11/18
+114630 | 12/18
+235980 | 13/18
+321820 | 14/18
+334890 | 15/18
+389650 | 16/18
+389680 | 17/18
+950210 | 18/18
+2026-11-27 02:06:25.709122 | 950210 | quarterly data of 950210 is empty.
+[2026-11-27 02:06:26 KST] fr_collect mode=financial finished
