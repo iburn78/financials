@@ -19106,3 +19106,8 @@ Market database update started: 2026-11-26 08:30:03 KST
 PV update skipped: 2026-11-26 is not a 005930 market session; prior_session=2026-11-25 remains unchanged.
 Market database update completed: 2026-11-26 08:30:05 KST
 [2026-11-26 08:30:05 KST] fr_collect mode=market finished
+[2026-11-26 09:05:02 KST] fr_collect mode=market started
+Market database update started: 2026-11-26 09:05:04 KST
+PV updated: session=2026-11-26 status=open; previous_session=2026-11-25 status=closed; securities=2774.
+Market database update completed: 2026-11-26 09:05:12 KST
+[2026-11-26 09:05:13 KST] fr_collect mode=market finished
