@@ -19290,3 +19290,8 @@ Financial data collection log >>
 950210 | 18/18
 2026-11-27 02:06:25.709122 | 950210 | quarterly data of 950210 is empty.
 [2026-11-27 02:06:26 KST] fr_collect mode=financial finished
+[2026-11-27 08:05:03 KST] fr_collect mode=market started
+Market database update started: 2026-11-27 08:05:04 KST
+PV update skipped: 2026-11-27 is not a 005930 market session; prior_session=2026-11-26 remains unchanged.
+Market database update completed: 2026-11-27 08:05:05 KST
+[2026-11-27 08:05:06 KST] fr_collect mode=market finished
